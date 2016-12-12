@@ -1,0 +1,12 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@* allow layout to run for all pages except first page *@
+@*@{
+    Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Layout.cshtml";
+}*@
+
+@* ViewCOntext.RouteData.Values["Controllers"].ToString()
+    gets all the data from the view.all the data that navigates data from controller to page.Value object.ToString()
+ *@

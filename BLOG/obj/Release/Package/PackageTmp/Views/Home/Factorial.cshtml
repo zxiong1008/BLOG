@@ -1,0 +1,23 @@
+﻿@*2. VIEW of MVC
+    use razor, model namespace,class *@
+
+@model BLOG.Models.FactorialViewModel
+
+@* Set up a form in this page to submit data to the server
+    strictly in the open/close braces. (ie. Input boxes)  *@
+    @using (Html.BeginForm())
+    {
+        <div class="row">
+            <input name="FactNumber" type="number" />
+        </div>
+        <div class="row">
+            <input type="submit" value="Submit Numbers" />
+        </div>
+    }
+
+    @if (Model != null)
+    {
+        <div class="row">
+            <p>Factorial Result:  @Model.FactResult</p>
+        </div>
+    }

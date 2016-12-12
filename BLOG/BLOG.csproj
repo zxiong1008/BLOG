@@ -1,0 +1,1556 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{012D4DD9-A4E1-4085-AD38-C81D90E6BF5B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BLOG</RootNamespace>
+    <AssemblyName>BLOG</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.1.2.3\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.1.2.3\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.1.2.3\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.1.2.3\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.1.2.3\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=1.2.3.490, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.1.2.3\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Mvc.RazorTools, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mvc.RazorTools.Base.1.0.5\lib\net45\Mvc.RazorTools.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.ArcGISOnline, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.ArcGISOnline.2.2.0\lib\net452\Owin.Security.Providers.ArcGISOnline.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.Asana, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.Asana.2.2.0\lib\net452\Owin.Security.Providers.Asana.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.Backlog, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.Backlog.2.2.0\lib\net452\Owin.Security.Providers.Backlog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.BattleNet, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.BattleNet.2.2.0\lib\net452\Owin.Security.Providers.BattleNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.Bitbucket, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.Bitbucket.2.2.0\lib\net452\Owin.Security.Providers.Bitbucket.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.Buffer, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.Buffer.2.2.0\lib\net452\Owin.Security.Providers.Buffer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.Cosign, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.Cosign.2.2.0\lib\net452\Owin.Security.Providers.Cosign.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.DeviantArt, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.DeviantArt.2.2.0\lib\net452\Owin.Security.Providers.DeviantArt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.Discord, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.Discord.2.2.0\lib\net452\Owin.Security.Providers.Discord.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.DoYouBuzz, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.DoYouBuzz.2.2.0\lib\net452\Owin.Security.Providers.DoYouBuzz.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.Dropbox, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.Dropbox.2.2.0\lib\net452\Owin.Security.Providers.Dropbox.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.EVEOnline, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.EVEOnline.2.2.0\lib\net452\Owin.Security.Providers.EVEOnline.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.Fitbit, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.Fitbit.2.2.0\lib\net452\Owin.Security.Providers.Fitbit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.Flickr, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.Flickr.2.2.0\lib\net452\Owin.Security.Providers.Flickr.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.Foursquare, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.Foursquare.2.2.0\lib\net452\Owin.Security.Providers.Foursquare.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.GitHub, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.GitHub.2.2.0\lib\net452\Owin.Security.Providers.GitHub.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.Gitter, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.Gitter.2.2.0\lib\net452\Owin.Security.Providers.Gitter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.GooglePlus, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.GooglePlus.2.2.0\lib\net452\Owin.Security.Providers.GooglePlus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.HealthGraph, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.HealthGraph.2.2.0\lib\net452\Owin.Security.Providers.HealthGraph.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.Imgur, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.Imgur.2.2.0\lib\net452\Owin.Security.Providers.Imgur.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.Instagram, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.Instagram.2.2.0\lib\net452\Owin.Security.Providers.Instagram.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.LinkedIn, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.LinkedIn.2.2.0\lib\net452\Owin.Security.Providers.LinkedIn.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.Onshape, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.Onshape.2.2.0\lib\net452\Owin.Security.Providers.Onshape.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.OpenID, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.OpenID.2.2.0\lib\net452\Owin.Security.Providers.OpenID.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.OpenIDBase, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.OpenIDBase.2.0.0\lib\net452\Owin.Security.Providers.OpenIDBase.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.Orcid, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.Orcid.2.2.0\lib\net452\Owin.Security.Providers.Orcid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.PayPal, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.PayPal.2.2.0\lib\net452\Owin.Security.Providers.PayPal.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.Reddit, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.Reddit.2.2.0\lib\net452\Owin.Security.Providers.Reddit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.Salesforce, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.Salesforce.2.2.0\lib\net452\Owin.Security.Providers.Salesforce.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.Shopify, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.Shopify.2.2.0\lib\net452\Owin.Security.Providers.Shopify.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.Slack, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.SlackProvider.2.2.0\lib\net452\Owin.Security.Providers.Slack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.SoundCloud, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.SoundCloud.2.2.0\lib\net452\Owin.Security.Providers.SoundCloud.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.Spotify, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.Spotify.2.2.0\lib\net452\Owin.Security.Providers.Spotify.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.StackExchange, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.StackExchange.2.2.0\lib\net452\Owin.Security.Providers.StackExchange.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.Steam, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.Steam.2.2.0\lib\net452\Owin.Security.Providers.Steam.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.TripIt, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.TripIt.2.2.0\lib\net452\Owin.Security.Providers.TripIt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.Twitch, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.Twitch.2.2.0\lib\net452\Owin.Security.Providers.Twitch.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.Untappd, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.Untappd.2.2.0\lib\net452\Owin.Security.Providers.Untappd.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.Vimeo, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.Vimeo.2.2.0\lib\net452\Owin.Security.Providers.Vimeo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.VisualStudio, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.VisualStudio.2.2.0\lib\net452\Owin.Security.Providers.VisualStudio.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.VKontakte, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.VKontakte.2.2.0\lib\net452\Owin.Security.Providers.VKontakte.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.Wargaming, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.Wargaming.2.2.0\lib\net452\Owin.Security.Providers.Wargaming.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.WordPress, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.WordPress.2.2.0\lib\net452\Owin.Security.Providers.WordPress.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.Xing, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.Xing.2.2.0\lib\net452\Owin.Security.Providers.Xing.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.Yahoo, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.Yahoo.2.2.0\lib\net452\Owin.Security.Providers.Yahoo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin.Security.Providers.Yammer, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.Yammer.2.2.0\lib\net452\Owin.Security.Providers.Yammer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SendGrid, Version=6.3.4.0, Culture=neutral, PublicKeyToken=4f047e93159395ca, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sendgrid.6.3.4\lib\SendGrid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SendGrid.SmtpApi, Version=1.3.1.0, Culture=neutral, PublicKeyToken=2ae73662c35d80e4, processorArchitecture=MSIL">
+      <HintPath>..\packages\SendGrid.SmtpApi.1.3.1\lib\net40\SendGrid.SmtpApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SendGridMail, Version=6.3.4.0, Culture=neutral, PublicKeyToken=4f047e93159395ca, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sendgrid.6.3.4\lib\SendGridMail.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0.6\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\COMMENTsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\POSTsController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\BlogModels.cs" />
+    <Compile Include="Models\Contact.cs" />
+    <Compile Include="Models\FiveNumbersViewModel.cs" />
+    <Compile Include="Models\FactorialViewModel.cs" />
+    <Compile Include="Models\FizzBuzzViewModel.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ImageValidator.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\PalindromeViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\btn-social\assets\css\bootstrap.css" />
+    <Content Include="Assets\btn-social\assets\css\docs.css" />
+    <Content Include="Assets\btn-social\assets\css\font-awesome.css" />
+    <Content Include="Assets\btn-social\assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="Assets\btn-social\assets\img\bootstrap-social.png" />
+    <Content Include="Assets\btn-social\assets\js\docs.js" />
+    <Content Include="Assets\btn-social\assets\js\jquery.js" />
+    <Content Include="Assets\btn-social\bootstrap-social.css" />
+    <Content Include="Assets\btn-social\index.html" />
+    <Content Include="Assets\css\agency.css" />
+    <Content Include="Assets\css\bootstrap.css" />
+    <Content Include="Assets\css\bootstrap.min.css" />
+    <Content Include="Assets\font-awesome\css\font-awesome.css" />
+    <Content Include="Assets\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Assets\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Assets\img\about\1.jpg" />
+    <Content Include="Assets\img\about\2.jpg" />
+    <Content Include="Assets\img\about\3.jpg" />
+    <Content Include="Assets\img\about\4.jpg" />
+    <Content Include="Assets\img\about\cf.jpg" />
+    <Content Include="Assets\img\about\Logo2016.jpg" />
+    <Content Include="Assets\img\about\sff.jpg" />
+    <Content Include="Assets\img\about\uncc.jpg" />
+    <Content Include="Assets\img\header-bg.jpg" />
+    <Content Include="Assets\img\map-image.png" />
+    <Content Include="Assets\img\map-image2.png" />
+    <Content Include="Assets\img\nice2.jpg" />
+    <Content Include="Assets\img\nice2b.jpg" />
+    <Content Include="Assets\img\nice2c.jpg" />
+    <Content Include="Assets\img\portfolio\dreams-preview.png" />
+    <Content Include="Assets\img\portfolio\dreams.png" />
+    <Content Include="Assets\img\portfolio\escape-preview.png" />
+    <Content Include="Assets\img\portfolio\escape.png" />
+    <Content Include="Assets\img\portfolio\golden-preview.png" />
+    <Content Include="Assets\img\portfolio\golden.png" />
+    <Content Include="Assets\img\portfolio\Icon_Calculator.jpg" />
+    <Content Include="Assets\img\portfolio\logos\aetuts.jpg" />
+    <Content Include="Assets\img\portfolio\logos\creative-market.jpg" />
+    <Content Include="Assets\img\portfolio\logos\designmodo.jpg" />
+    <Content Include="Assets\img\portfolio\logos\envato.jpg" />
+    <Content Include="Assets\img\portfolio\logos\microlancer.jpg" />
+    <Content Include="Assets\img\portfolio\logos\themeforest.jpg" />
+    <Content Include="Assets\img\portfolio\logos\wordpress.jpg" />
+    <Content Include="Assets\img\portfolio\n.jpg" />
+    <Content Include="Assets\img\portfolio\pal.png" />
+    <Content Include="Assets\img\portfolio\PIC-fizzbuzz.png" />
+    <Content Include="Assets\img\portfolio\roundicons-free.png" />
+    <Content Include="Assets\img\portfolio\roundicons.png" />
+    <Content Include="Assets\img\portfolio\startup-framework-preview.png" />
+    <Content Include="Assets\img\portfolio\startup-framework.png" />
+    <Content Include="Assets\img\portfolio\treehouse-preview.png" />
+    <Content Include="Assets\img\portfolio\treehouse.png" />
+    <Content Include="Assets\img\team\1.jpg" />
+    <Content Include="Assets\img\team\2.jpg" />
+    <Content Include="Assets\img\team\3.jpg" />
+    <Content Include="Assets\img\team\zeng1.jpg" />
+    <Content Include="Assets\index.html" />
+    <Content Include="Assets\js\agency.js" />
+    <Content Include="Assets\js\bootstrap.js" />
+    <Content Include="Assets\js\bootstrap.min.js" />
+    <Content Include="Assets\js\cbpAnimatedHeader.js" />
+    <Content Include="Assets\js\cbpAnimatedHeader.min.js" />
+    <Content Include="Assets\js\classie.js" />
+    <Content Include="Assets\js\contact_me.js" />
+    <Content Include="Assets\js\jqBootstrapValidation.js" />
+    <Content Include="Assets\js\jquery.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\SyntaxHighlighter\shCore.css" />
+    <Content Include="Content\SyntaxHighlighter\shCoreDefault.css" />
+    <Content Include="Content\SyntaxHighlighter\shCoreDjango.css" />
+    <Content Include="Content\SyntaxHighlighter\shCoreEclipse.css" />
+    <Content Include="Content\SyntaxHighlighter\shCoreEmacs.css" />
+    <Content Include="Content\SyntaxHighlighter\shCoreFadeToGrey.css" />
+    <Content Include="Content\SyntaxHighlighter\shCoreMDUltra.css" />
+    <Content Include="Content\SyntaxHighlighter\shCoreMidnight.css" />
+    <Content Include="Content\SyntaxHighlighter\shCoreRDark.css" />
+    <Content Include="Content\SyntaxHighlighter\shThemeDefault.css" />
+    <Content Include="Content\SyntaxHighlighter\shThemeDjango.css" />
+    <Content Include="Content\SyntaxHighlighter\shThemeEclipse.css" />
+    <Content Include="Content\SyntaxHighlighter\shThemeEmacs.css" />
+    <Content Include="Content\SyntaxHighlighter\shThemeFadeToGrey.css" />
+    <Content Include="Content\SyntaxHighlighter\shThemeMDUltra.css" />
+    <Content Include="Content\SyntaxHighlighter\shThemeMidnight.css" />
+    <Content Include="Content\SyntaxHighlighter\shThemeRDark.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Hover-master\css\demo-page.css" />
+    <Content Include="Hover-master\css\hover-min.css" />
+    <Content Include="Hover-master\css\hover.css" />
+    <Content Include="Hover-master\Gruntfile.js" />
+    <Content Include="Hover-master\hover.jpg" />
+    <Content Include="Hover-master\index.html" />
+    <Content Include="Hover-master\license.txt" />
+    <Content Include="Hover-master\logo-transparent.png" />
+    <Content Include="Hover-master\modern-slide-in.png" />
+    <Content Include="Hover-master\photo-stack.png" />
+    <Content Include="Hover-master\sequence-logo.png" />
+    <Content Include="Hover-master\two-up.png" />
+    <Content Include="images\blog\3.jpg" />
+    <Content Include="images\blog\bugtracker1.png" />
+    <Content Include="images\blog\bugtracker2.png" />
+    <Content Include="images\blog\cf.jpg" />
+    <Content Include="images\blog\day 10 - new scaffold item.png" />
+    <Content Include="images\blog\day 6 - MVC controller start.png" />
+    <Content Include="images\blog\day 8 - javascript.png" />
+    <Content Include="images\blog\fa.png" />
+    <Content Include="images\blog\IMG_0937.jpg" />
+    <Content Include="images\blog\school.png" />
+    <Content Include="images\html5 css3 js.png" />
+    <Content Include="MAssets\404.html" />
+    <Content Include="MAssets\about.html" />
+    <Content Include="MAssets\accordion-toggles.html" />
+    <Content Include="MAssets\action-box.html" />
+    <Content Include="MAssets\asset\css\bootstrap.min.css" />
+    <Content Include="MAssets\asset\js\bootstrap.min.js" />
+    <Content Include="MAssets\blog-left-sidebar.html" />
+    <Content Include="MAssets\blog.html" />
+    <Content Include="MAssets\buttons.html" />
+    <Content Include="MAssets\contact.html" />
+    <Content Include="MAssets\css\animate.css" />
+    <Content Include="MAssets\css\colors\beige.css" />
+    <Content Include="MAssets\css\colors\blue.css" />
+    <Content Include="MAssets\css\colors\cyan.css" />
+    <Content Include="MAssets\css\colors\green.css" />
+    <Content Include="MAssets\css\colors\jade.css" />
+    <Content Include="MAssets\css\colors\orange.css" />
+    <Content Include="MAssets\css\colors\peach.css" />
+    <Content Include="MAssets\css\colors\pink.css" />
+    <Content Include="MAssets\css\colors\purple.css" />
+    <Content Include="MAssets\css\colors\red.css" />
+    <Content Include="MAssets\css\colors\sky-blue.css" />
+    <Content Include="MAssets\css\colors\yellow.css" />
+    <Content Include="MAssets\css\font-awesome.min.css" />
+    <Content Include="MAssets\css\responsive.css" />
+    <Content Include="MAssets\css\slicknav.css" />
+    <Content Include="MAssets\css\style.css" />
+    <Content Include="MAssets\fonts\fontawesome-webfont.svg" />
+    <Content Include="MAssets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="MAssets\images\1.png" />
+    <Content Include="MAssets\images\about-01.jpg" />
+    <Content Include="MAssets\images\about-02.jpg" />
+    <Content Include="MAssets\images\about-03.jpg" />
+    <Content Include="MAssets\images\author.png" />
+    <Content Include="MAssets\images\avatar.png" />
+    <Content Include="MAssets\images\blog-01.jpg" />
+    <Content Include="MAssets\images\blog-02.jpg" />
+    <Content Include="MAssets\images\blog-03.jpg" />
+    <Content Include="MAssets\images\blog-04.jpg" />
+    <Content Include="MAssets\images\blog-05.jpg" />
+    <Content Include="MAssets\images\blog-mini-01.jpg" />
+    <Content Include="MAssets\images\blog-mini-02.jpg" />
+    <Content Include="MAssets\images\blog-mini-03.jpg" />
+    <Content Include="MAssets\images\browser.png" />
+    <Content Include="MAssets\images\bussniss-pic.jpg" />
+    <Content Include="MAssets\images\c1.png" />
+    <Content Include="MAssets\images\c2.png" />
+    <Content Include="MAssets\images\c3.png" />
+    <Content Include="MAssets\images\c4.png" />
+    <Content Include="MAssets\images\c5.png" />
+    <Content Include="MAssets\images\c6.png" />
+    <Content Include="MAssets\images\c7.png" />
+    <Content Include="MAssets\images\c8.png" />
+    <Content Include="MAssets\images\favicon.png" />
+    <Content Include="MAssets\images\flickr-01.jpg" />
+    <Content Include="MAssets\images\flickr-02.jpg" />
+    <Content Include="MAssets\images\flickr-03.jpg" />
+    <Content Include="MAssets\images\flickr-04.jpg" />
+    <Content Include="MAssets\images\flickr-05.jpg" />
+    <Content Include="MAssets\images\flickr-06.jpg" />
+    <Content Include="MAssets\images\flickr-07.jpg" />
+    <Content Include="MAssets\images\flickr-08.jpg" />
+    <Content Include="MAssets\images\flickr-09.jpg" />
+    <Content Include="MAssets\images\footer-margo.png" />
+    <Content Include="MAssets\images\home %281%29.jpg" />
+    <Content Include="MAssets\images\map.png" />
+    <Content Include="MAssets\images\margo.png" />
+    <Content Include="MAssets\images\member-01.jpg" />
+    <Content Include="MAssets\images\member-02.jpg" />
+    <Content Include="MAssets\images\member-03.jpg" />
+    <Content Include="MAssets\images\member-04.jpg" />
+    <Content Include="MAssets\images\member01.jpg" />
+    <Content Include="MAssets\images\member02.jpg" />
+    <Content Include="MAssets\images\member03.jpg" />
+    <Content Include="MAssets\images\parallax\bg-01.jpg" />
+    <Content Include="MAssets\images\parallax\bg-02.jpg" />
+    <Content Include="MAssets\images\patterns\1.png" />
+    <Content Include="MAssets\images\patterns\10.png" />
+    <Content Include="MAssets\images\patterns\11.png" />
+    <Content Include="MAssets\images\patterns\12.png" />
+    <Content Include="MAssets\images\patterns\13.png" />
+    <Content Include="MAssets\images\patterns\14.png" />
+    <Content Include="MAssets\images\patterns\2.png" />
+    <Content Include="MAssets\images\patterns\3.png" />
+    <Content Include="MAssets\images\patterns\4.png" />
+    <Content Include="MAssets\images\patterns\5.png" />
+    <Content Include="MAssets\images\patterns\6.png" />
+    <Content Include="MAssets\images\patterns\7.png" />
+    <Content Include="MAssets\images\patterns\8.png" />
+    <Content Include="MAssets\images\patterns\9.png" />
+    <Content Include="MAssets\images\portfolio-01.jpg" />
+    <Content Include="MAssets\images\portfolio-02.jpg" />
+    <Content Include="MAssets\images\portfolio-03.jpg" />
+    <Content Include="MAssets\images\portfolio-04.jpg" />
+    <Content Include="MAssets\images\portfolio-05.jpg" />
+    <Content Include="MAssets\images\portfolio-06.jpg" />
+    <Content Include="MAssets\images\portfolio-07.jpg" />
+    <Content Include="MAssets\images\portfolio-08.jpg" />
+    <Content Include="MAssets\images\portfolio-09.jpg" />
+    <Content Include="MAssets\images\portfolio-1\1.png" />
+    <Content Include="MAssets\images\portfolio-1\10.png" />
+    <Content Include="MAssets\images\portfolio-1\11.png" />
+    <Content Include="MAssets\images\portfolio-1\12.png" />
+    <Content Include="MAssets\images\portfolio-1\2.png" />
+    <Content Include="MAssets\images\portfolio-1\3.png" />
+    <Content Include="MAssets\images\portfolio-1\4.png" />
+    <Content Include="MAssets\images\portfolio-1\5.png" />
+    <Content Include="MAssets\images\portfolio-1\6.png" />
+    <Content Include="MAssets\images\portfolio-1\7.png" />
+    <Content Include="MAssets\images\portfolio-1\8.png" />
+    <Content Include="MAssets\images\portfolio-1\9.png" />
+    <Content Include="MAssets\images\portfolio-1\port-1.jpg" />
+    <Content Include="MAssets\images\portfolio-1\port-2.jpg" />
+    <Content Include="MAssets\images\portfolio-1\port-3.jpg" />
+    <Content Include="MAssets\images\portfolio-1\port-4.jpg" />
+    <Content Include="MAssets\images\portfolio-1\port-5.jpg" />
+    <Content Include="MAssets\images\portfolio-1\port-6.jpg" />
+    <Content Include="MAssets\images\portfolio-1\port-7.jpg" />
+    <Content Include="MAssets\images\portfolio-1\port-8.jpg" />
+    <Content Include="MAssets\images\portfolio-1\port-9.jpg" />
+    <Content Include="MAssets\images\portfolio-1\portfolio-img1.jpg" />
+    <Content Include="MAssets\images\portfolio-1\portfolio-img2.jpg" />
+    <Content Include="MAssets\images\portfolio-1\portfolio-img3.jpg" />
+    <Content Include="MAssets\images\portfolio-1\portfolio-img4.jpg" />
+    <Content Include="MAssets\images\portfolio-1\portfolio-img5.jpg" />
+    <Content Include="MAssets\images\portfolio-1\portfolio-img6.jpg" />
+    <Content Include="MAssets\images\portfolio-big-01.jpg" />
+    <Content Include="MAssets\images\portfolio-big-02.jpg" />
+    <Content Include="MAssets\images\portfolio-big-03.jpg" />
+    <Content Include="MAssets\images\portfolio\1.png" />
+    <Content Include="MAssets\images\portfolio\10.png" />
+    <Content Include="MAssets\images\portfolio\11.png" />
+    <Content Include="MAssets\images\portfolio\12.png" />
+    <Content Include="MAssets\images\portfolio\2.png" />
+    <Content Include="MAssets\images\portfolio\3.png" />
+    <Content Include="MAssets\images\portfolio\4.png" />
+    <Content Include="MAssets\images\portfolio\5.png" />
+    <Content Include="MAssets\images\portfolio\6.png" />
+    <Content Include="MAssets\images\portfolio\7.png" />
+    <Content Include="MAssets\images\portfolio\8.png" />
+    <Content Include="MAssets\images\portfolio\9.png" />
+    <Content Include="MAssets\images\portfolio\port-1.jpg" />
+    <Content Include="MAssets\images\portfolio\port-2.jpg" />
+    <Content Include="MAssets\images\portfolio\port-3.jpg" />
+    <Content Include="MAssets\images\portfolio\port-4.jpg" />
+    <Content Include="MAssets\images\portfolio\port-5.jpg" />
+    <Content Include="MAssets\images\portfolio\port-6.jpg" />
+    <Content Include="MAssets\images\portfolio\port-7.jpg" />
+    <Content Include="MAssets\images\portfolio\port-8.jpg" />
+    <Content Include="MAssets\images\portfolio\port-9.jpg" />
+    <Content Include="MAssets\images\portfolio\portfolio-img1.jpg" />
+    <Content Include="MAssets\images\portfolio\portfolio-img2.jpg" />
+    <Content Include="MAssets\images\portfolio\portfolio-img3.jpg" />
+    <Content Include="MAssets\images\portfolio\portfolio-img4.jpg" />
+    <Content Include="MAssets\images\portfolio\portfolio-img5.jpg" />
+    <Content Include="MAssets\images\portfolio\portfolio-img6.jpg" />
+    <Content Include="MAssets\images\poster.jpg" />
+    <Content Include="MAssets\images\service-01.jpg" />
+    <Content Include="MAssets\images\service-02.jpg" />
+    <Content Include="MAssets\images\service-03.jpg" />
+    <Content Include="MAssets\images\slide-01-bg.jpg" />
+    <Content Include="MAssets\images\slide-01-image-01.png" />
+    <Content Include="MAssets\images\slide-01-image-02.png" />
+    <Content Include="MAssets\images\slide-02-bg - Copy.jpg" />
+    <Content Include="MAssets\images\slide-02-bg--.jpg" />
+    <Content Include="MAssets\images\slide-02-bg.jpg" />
+    <Content Include="MAssets\images\slide-02-image-01.png" />
+    <Content Include="MAssets\images\slide-03-bg.jpg" />
+    <Content Include="MAssets\images\slide-03-image-01.png" />
+    <Content Include="MAssets\images\slide-03-image-02.png" />
+    <Content Include="MAssets\images\slider\bg1.jpg" />
+    <Content Include="MAssets\images\slider\bg2.jpg" />
+    <Content Include="MAssets\images\slider\bg3.jpg" />
+    <Content Include="MAssets\images\team\face_1.png" />
+    <Content Include="MAssets\images\team\face_2.png" />
+    <Content Include="MAssets\images\team\face_3.png" />
+    <Content Include="MAssets\images\team\face_4.png" />
+    <Content Include="MAssets\images\testimonials-bg.jpg" />
+    <Content Include="MAssets\images\testimonials-bg1.jpg" />
+    <Content Include="MAssets\images\venda-pic.png" />
+    <Content Include="MAssets\index-01.html" />
+    <Content Include="MAssets\index-02.html" />
+    <Content Include="MAssets\index-03.html" />
+    <Content Include="MAssets\index-04.html" />
+    <Content Include="MAssets\index-05.html" />
+    <Content Include="MAssets\index-06.html" />
+    <Content Include="MAssets\index-07.html" />
+    <Content Include="MAssets\index.html" />
+    <Content Include="MAssets\js\contact.js" />
+    <Content Include="MAssets\js\count-to.js" />
+    <Content Include="MAssets\js\jquery-2.1.4.min.js" />
+    <Content Include="MAssets\js\jquery-migrate-1.2.1.min.js" />
+    <Content Include="MAssets\js\jquery.appear.js" />
+    <Content Include="MAssets\js\jquery.easypiechart.js" />
+    <Content Include="MAssets\js\jquery.easypiechart.min.js" />
+    <Content Include="MAssets\js\jquery.fitvids.js" />
+    <Content Include="MAssets\js\jquery.isotope.js" />
+    <Content Include="MAssets\js\jquery.isotope.min.js" />
+    <Content Include="MAssets\js\jquery.lettering.js" />
+    <Content Include="MAssets\js\jquery.migrate.js" />
+    <Content Include="MAssets\js\jquery.nicescroll.js" />
+    <Content Include="MAssets\js\jquery.nicescroll.min.js" />
+    <Content Include="MAssets\js\jquery.parallax.js" />
+    <Content Include="MAssets\js\jquery.slicknav.js" />
+    <Content Include="MAssets\js\jquery.textillate.js" />
+    <Content Include="MAssets\js\mediaelement-and-player.js" />
+    <Content Include="MAssets\js\modernizrr.js" />
+    <Content Include="MAssets\js\nivo-lightbox.js" />
+    <Content Include="MAssets\js\nivo-lightbox.min.js" />
+    <Content Include="MAssets\js\owl.carousel.js" />
+    <Content Include="MAssets\js\owl.carousel.min.js" />
+    <Content Include="MAssets\js\script.js" />
+    <Content Include="MAssets\latest-posts.html" />
+    <Content Include="MAssets\latest-projects.html" />
+    <Content Include="MAssets\left-sidebar.html" />
+    <Content Include="MAssets\portfolio-2.html" />
+    <Content Include="MAssets\portfolio-3.html" />
+    <Content Include="MAssets\portfolio-4.html" />
+    <Content Include="MAssets\pricing.html" />
+    <Content Include="MAssets\right-sidebar.html" />
+    <Content Include="MAssets\services.html" />
+    <Content Include="MAssets\single-post.html" />
+    <Content Include="MAssets\single-project.html" />
+    <Content Include="MAssets\tabs.html" />
+    <Content Include="MAssets\testimonials.html" />
+    <Content Include="MAssets\__MACOSX\images\._1.png" />
+    <Content Include="MAssets\__MACOSX\images\._about-01.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._about-02.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._about-03.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._author.png" />
+    <Content Include="MAssets\__MACOSX\images\._avatar.png" />
+    <Content Include="MAssets\__MACOSX\images\._blog-01.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._blog-02.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._blog-03.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._blog-04.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._blog-05.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._blog-mini-01.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._blog-mini-02.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._blog-mini-03.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._browser.png" />
+    <Content Include="MAssets\__MACOSX\images\._bussniss-pic.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._c1.png" />
+    <Content Include="MAssets\__MACOSX\images\._c2.png" />
+    <Content Include="MAssets\__MACOSX\images\._c3.png" />
+    <Content Include="MAssets\__MACOSX\images\._c4.png" />
+    <Content Include="MAssets\__MACOSX\images\._c5.png" />
+    <Content Include="MAssets\__MACOSX\images\._c6.png" />
+    <Content Include="MAssets\__MACOSX\images\._c7.png" />
+    <Content Include="MAssets\__MACOSX\images\._c8.png" />
+    <Content Include="MAssets\__MACOSX\images\._favicon.png" />
+    <Content Include="MAssets\__MACOSX\images\._flickr-01.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._flickr-02.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._flickr-03.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._flickr-04.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._flickr-05.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._flickr-06.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._flickr-07.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._flickr-08.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._flickr-09.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._footer-margo.png" />
+    <Content Include="MAssets\__MACOSX\images\._home %281%29.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._map.png" />
+    <Content Include="MAssets\__MACOSX\images\._margo.png" />
+    <Content Include="MAssets\__MACOSX\images\._member-01.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._member-02.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._member-03.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._member-04.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._member01.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._member02.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._member03.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._portfolio-01.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._portfolio-02.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._portfolio-03.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._portfolio-04.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._portfolio-05.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._portfolio-06.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._portfolio-07.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._portfolio-08.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._portfolio-09.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._portfolio-big-01.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._portfolio-big-02.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._portfolio-big-03.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._poster.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._service-01.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._service-02.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._service-03.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._slide-01-bg.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._slide-01-image-01.png" />
+    <Content Include="MAssets\__MACOSX\images\._slide-01-image-02.png" />
+    <Content Include="MAssets\__MACOSX\images\._slide-02-bg - Copy.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._slide-02-bg--.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._slide-02-bg.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._slide-02-image-01.png" />
+    <Content Include="MAssets\__MACOSX\images\._slide-03-bg.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._slide-03-image-01.png" />
+    <Content Include="MAssets\__MACOSX\images\._slide-03-image-02.png" />
+    <Content Include="MAssets\__MACOSX\images\._testimonials-bg.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._testimonials-bg1.jpg" />
+    <Content Include="MAssets\__MACOSX\images\._venda-pic.png" />
+    <Content Include="MAssets\__MACOSX\images\parallax\._bg-01.jpg" />
+    <Content Include="MAssets\__MACOSX\images\parallax\._bg-02.jpg" />
+    <Content Include="MAssets\__MACOSX\images\patterns\._1.png" />
+    <Content Include="MAssets\__MACOSX\images\patterns\._10.png" />
+    <Content Include="MAssets\__MACOSX\images\patterns\._11.png" />
+    <Content Include="MAssets\__MACOSX\images\patterns\._12.png" />
+    <Content Include="MAssets\__MACOSX\images\patterns\._13.png" />
+    <Content Include="MAssets\__MACOSX\images\patterns\._14.png" />
+    <Content Include="MAssets\__MACOSX\images\patterns\._2.png" />
+    <Content Include="MAssets\__MACOSX\images\patterns\._3.png" />
+    <Content Include="MAssets\__MACOSX\images\patterns\._4.png" />
+    <Content Include="MAssets\__MACOSX\images\patterns\._5.png" />
+    <Content Include="MAssets\__MACOSX\images\patterns\._6.png" />
+    <Content Include="MAssets\__MACOSX\images\patterns\._7.png" />
+    <Content Include="MAssets\__MACOSX\images\patterns\._8.png" />
+    <Content Include="MAssets\__MACOSX\images\patterns\._9.png" />
+    <Content Include="MAssets\__MACOSX\images\portfolio-1\._1.png" />
+    <Content Include="MAssets\__MACOSX\images\portfolio-1\._10.png" />
+    <Content Include="MAssets\__MACOSX\images\portfolio-1\._11.png" />
+    <Content Include="MAssets\__MACOSX\images\portfolio-1\._12.png" />
+    <Content Include="MAssets\__MACOSX\images\portfolio-1\._2.png" />
+    <Content Include="MAssets\__MACOSX\images\portfolio-1\._3.png" />
+    <Content Include="MAssets\__MACOSX\images\portfolio-1\._4.png" />
+    <Content Include="MAssets\__MACOSX\images\portfolio-1\._5.png" />
+    <Content Include="MAssets\__MACOSX\images\portfolio-1\._6.png" />
+    <Content Include="MAssets\__MACOSX\images\portfolio-1\._7.png" />
+    <Content Include="MAssets\__MACOSX\images\portfolio-1\._8.png" />
+    <Content Include="MAssets\__MACOSX\images\portfolio-1\._9.png" />
+    <Content Include="MAssets\__MACOSX\images\portfolio-1\._port-1.jpg" />
+    <Content Include="MAssets\__MACOSX\images\portfolio-1\._port-2.jpg" />
+    <Content Include="MAssets\__MACOSX\images\portfolio-1\._port-3.jpg" />
+    <Content Include="MAssets\__MACOSX\images\portfolio-1\._port-4.jpg" />
+    <Content Include="MAssets\__MACOSX\images\portfolio-1\._port-5.jpg" />
+    <Content Include="MAssets\__MACOSX\images\portfolio-1\._port-6.jpg" />
+    <Content Include="MAssets\__MACOSX\images\portfolio-1\._port-7.jpg" />
+    <Content Include="MAssets\__MACOSX\images\portfolio-1\._port-8.jpg" />
+    <Content Include="MAssets\__MACOSX\images\portfolio-1\._port-9.jpg" />
+    <Content Include="MAssets\__MACOSX\images\portfolio-1\._portfolio-img1.jpg" />
+    <Content Include="MAssets\__MACOSX\images\portfolio-1\._portfolio-img2.jpg" />
+    <Content Include="MAssets\__MACOSX\images\portfolio-1\._portfolio-img3.jpg" />
+    <Content Include="MAssets\__MACOSX\images\portfolio-1\._portfolio-img4.jpg" />
+    <Content Include="MAssets\__MACOSX\images\portfolio-1\._portfolio-img5.jpg" />
+    <Content Include="MAssets\__MACOSX\images\portfolio-1\._portfolio-img6.jpg" />
+    <Content Include="MAssets\__MACOSX\images\portfolio\._1.png" />
+    <Content Include="MAssets\__MACOSX\images\portfolio\._10.png" />
+    <Content Include="MAssets\__MACOSX\images\portfolio\._11.png" />
+    <Content Include="MAssets\__MACOSX\images\portfolio\._12.png" />
+    <Content Include="MAssets\__MACOSX\images\portfolio\._2.png" />
+    <Content Include="MAssets\__MACOSX\images\portfolio\._3.png" />
+    <Content Include="MAssets\__MACOSX\images\portfolio\._4.png" />
+    <Content Include="MAssets\__MACOSX\images\portfolio\._5.png" />
+    <Content Include="MAssets\__MACOSX\images\portfolio\._6.png" />
+    <Content Include="MAssets\__MACOSX\images\portfolio\._7.png" />
+    <Content Include="MAssets\__MACOSX\images\portfolio\._8.png" />
+    <Content Include="MAssets\__MACOSX\images\portfolio\._9.png" />
+    <Content Include="MAssets\__MACOSX\images\portfolio\._port-1.jpg" />
+    <Content Include="MAssets\__MACOSX\images\portfolio\._port-2.jpg" />
+    <Content Include="MAssets\__MACOSX\images\portfolio\._port-3.jpg" />
+    <Content Include="MAssets\__MACOSX\images\portfolio\._port-4.jpg" />
+    <Content Include="MAssets\__MACOSX\images\portfolio\._port-5.jpg" />
+    <Content Include="MAssets\__MACOSX\images\portfolio\._port-6.jpg" />
+    <Content Include="MAssets\__MACOSX\images\portfolio\._port-7.jpg" />
+    <Content Include="MAssets\__MACOSX\images\portfolio\._port-8.jpg" />
+    <Content Include="MAssets\__MACOSX\images\portfolio\._port-9.jpg" />
+    <Content Include="MAssets\__MACOSX\images\portfolio\._portfolio-img1.jpg" />
+    <Content Include="MAssets\__MACOSX\images\portfolio\._portfolio-img2.jpg" />
+    <Content Include="MAssets\__MACOSX\images\portfolio\._portfolio-img3.jpg" />
+    <Content Include="MAssets\__MACOSX\images\portfolio\._portfolio-img4.jpg" />
+    <Content Include="MAssets\__MACOSX\images\portfolio\._portfolio-img5.jpg" />
+    <Content Include="MAssets\__MACOSX\images\portfolio\._portfolio-img6.jpg" />
+    <Content Include="MAssets\__MACOSX\images\slider\._bg1.jpg" />
+    <Content Include="MAssets\__MACOSX\images\slider\._bg2.jpg" />
+    <Content Include="MAssets\__MACOSX\images\slider\._bg3.jpg" />
+    <Content Include="MAssets\__MACOSX\images\team\._face_1.png" />
+    <Content Include="MAssets\__MACOSX\images\team\._face_2.png" />
+    <Content Include="MAssets\__MACOSX\images\team\._face_3.png" />
+    <Content Include="MAssets\__MACOSX\images\team\._face_4.png" />
+    <Content Include="Scripts\ai.0.15.0-build58334.js" />
+    <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Assets\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Assets\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Assets\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Assets\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Assets\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Assets\font-awesome\less\core.less" />
+    <Content Include="Assets\font-awesome\less\fixed-width.less" />
+    <Content Include="Assets\font-awesome\less\font-awesome.less" />
+    <Content Include="Assets\font-awesome\less\icons.less" />
+    <Content Include="Assets\font-awesome\less\larger.less" />
+    <Content Include="Assets\font-awesome\less\list.less" />
+    <Content Include="Assets\font-awesome\less\mixins.less" />
+    <Content Include="Assets\font-awesome\less\path.less" />
+    <Content Include="Assets\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Assets\font-awesome\less\spinning.less" />
+    <Content Include="Assets\font-awesome\less\stacked.less" />
+    <Content Include="Assets\font-awesome\less\variables.less" />
+    <Content Include="Assets\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Assets\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Assets\font-awesome\scss\_core.scss" />
+    <Content Include="Assets\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Assets\font-awesome\scss\_icons.scss" />
+    <Content Include="Assets\font-awesome\scss\_larger.scss" />
+    <Content Include="Assets\font-awesome\scss\_list.scss" />
+    <Content Include="Assets\font-awesome\scss\_mixins.scss" />
+    <Content Include="Assets\font-awesome\scss\_path.scss" />
+    <Content Include="Assets\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Assets\font-awesome\scss\_spinning.scss" />
+    <Content Include="Assets\font-awesome\scss\_stacked.scss" />
+    <Content Include="Assets\font-awesome\scss\_variables.scss" />
+    <Content Include="Assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Assets\less\agency.less" />
+    <Content Include="Assets\less\mixins.less" />
+    <Content Include="Assets\less\variables.less" />
+    <Content Include="Assets\LICENSE" />
+    <Content Include="Assets\mail\contact_me.php" />
+    <Content Include="Assets\README.md" />
+    <Content Include="MAssets\fonts\fontawesome-webfont.eot" />
+    <Content Include="MAssets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="MAssets\fonts\fontawesome-webfont.woff" />
+    <Content Include="MAssets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="MAssets\fonts\FontAwesome.otf" />
+    <Content Include="MAssets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="MAssets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="MAssets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="MAssets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="MAssets\php\send.php" />
+    <Content Include="MAssets\__MACOSX\._images" />
+    <Content Include="MAssets\__MACOSX\images\._parallax" />
+    <Content Include="MAssets\__MACOSX\images\._patterns" />
+    <Content Include="MAssets\__MACOSX\images\._portfolio" />
+    <Content Include="MAssets\__MACOSX\images\._portfolio-1" />
+    <Content Include="MAssets\__MACOSX\images\._slider" />
+    <Content Include="MAssets\__MACOSX\images\._team" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="Hover-master\.editorconfig" />
+    <Content Include="Hover-master\bower.json" />
+    <Content Include="Hover-master\CONTRIBUTING.md" />
+    <Content Include="Hover-master\HISTORY.md" />
+    <Content Include="Hover-master\less\effects\2d-transitions\_bob.less" />
+    <Content Include="Hover-master\less\effects\2d-transitions\_bounce-in.less" />
+    <Content Include="Hover-master\less\effects\2d-transitions\_bounce-out.less" />
+    <Content Include="Hover-master\less\effects\2d-transitions\_buzz-out.less" />
+    <Content Include="Hover-master\less\effects\2d-transitions\_buzz.less" />
+    <Content Include="Hover-master\less\effects\2d-transitions\_float.less" />
+    <Content Include="Hover-master\less\effects\2d-transitions\_grow-rotate.less" />
+    <Content Include="Hover-master\less\effects\2d-transitions\_grow.less" />
+    <Content Include="Hover-master\less\effects\2d-transitions\_hang.less" />
+    <Content Include="Hover-master\less\effects\2d-transitions\_pop.less" />
+    <Content Include="Hover-master\less\effects\2d-transitions\_pulse-grow.less" />
+    <Content Include="Hover-master\less\effects\2d-transitions\_pulse-shrink.less" />
+    <Content Include="Hover-master\less\effects\2d-transitions\_pulse.less" />
+    <Content Include="Hover-master\less\effects\2d-transitions\_push.less" />
+    <Content Include="Hover-master\less\effects\2d-transitions\_rotate.less" />
+    <Content Include="Hover-master\less\effects\2d-transitions\_shrink.less" />
+    <Content Include="Hover-master\less\effects\2d-transitions\_sink.less" />
+    <Content Include="Hover-master\less\effects\2d-transitions\_skew-backward.less" />
+    <Content Include="Hover-master\less\effects\2d-transitions\_skew-forward.less" />
+    <Content Include="Hover-master\less\effects\2d-transitions\_skew.less" />
+    <Content Include="Hover-master\less\effects\2d-transitions\_wobble-bottom.less" />
+    <Content Include="Hover-master\less\effects\2d-transitions\_wobble-horizontal.less" />
+    <Content Include="Hover-master\less\effects\2d-transitions\_wobble-skew.less" />
+    <Content Include="Hover-master\less\effects\2d-transitions\_wobble-to-bottom-right.less" />
+    <Content Include="Hover-master\less\effects\2d-transitions\_wobble-to-top-right.less" />
+    <Content Include="Hover-master\less\effects\2d-transitions\_wobble-top.less" />
+    <Content Include="Hover-master\less\effects\2d-transitions\_wobble-vertical.less" />
+    <Content Include="Hover-master\less\effects\background-transitions\_back-pulse.less" />
+    <Content Include="Hover-master\less\effects\background-transitions\_bounce-to-bottom.less" />
+    <Content Include="Hover-master\less\effects\background-transitions\_bounce-to-left.less" />
+    <Content Include="Hover-master\less\effects\background-transitions\_bounce-to-right.less" />
+    <Content Include="Hover-master\less\effects\background-transitions\_bounce-to-top.less" />
+    <Content Include="Hover-master\less\effects\background-transitions\_fade.less" />
+    <Content Include="Hover-master\less\effects\background-transitions\_radial-in.less" />
+    <Content Include="Hover-master\less\effects\background-transitions\_radial-out.less" />
+    <Content Include="Hover-master\less\effects\background-transitions\_rectangle-in.less" />
+    <Content Include="Hover-master\less\effects\background-transitions\_rectangle-out.less" />
+    <Content Include="Hover-master\less\effects\background-transitions\_shutter-in-horizontal.less" />
+    <Content Include="Hover-master\less\effects\background-transitions\_shutter-in-vertical.less" />
+    <Content Include="Hover-master\less\effects\background-transitions\_shutter-out-horizontal.less" />
+    <Content Include="Hover-master\less\effects\background-transitions\_shutter-out-vertical.less" />
+    <Content Include="Hover-master\less\effects\background-transitions\_sweep-to-bottom.less" />
+    <Content Include="Hover-master\less\effects\background-transitions\_sweep-to-left.less" />
+    <Content Include="Hover-master\less\effects\background-transitions\_sweep-to-right.less" />
+    <Content Include="Hover-master\less\effects\background-transitions\_sweep-to-top.less" />
+    <Content Include="Hover-master\less\effects\border-transitions\_border-fade.less" />
+    <Content Include="Hover-master\less\effects\border-transitions\_hollow.less" />
+    <Content Include="Hover-master\less\effects\border-transitions\_outline-in.less" />
+    <Content Include="Hover-master\less\effects\border-transitions\_outline-out.less" />
+    <Content Include="Hover-master\less\effects\border-transitions\_overline-from-center.less" />
+    <Content Include="Hover-master\less\effects\border-transitions\_overline-from-left.less" />
+    <Content Include="Hover-master\less\effects\border-transitions\_overline-from-right.less" />
+    <Content Include="Hover-master\less\effects\border-transitions\_overline-reveal.less" />
+    <Content Include="Hover-master\less\effects\border-transitions\_reveal.less" />
+    <Content Include="Hover-master\less\effects\border-transitions\_ripple-in.less" />
+    <Content Include="Hover-master\less\effects\border-transitions\_ripple-out.less" />
+    <Content Include="Hover-master\less\effects\border-transitions\_round-corners.less" />
+    <Content Include="Hover-master\less\effects\border-transitions\_trim.less" />
+    <Content Include="Hover-master\less\effects\border-transitions\_underline-from-center.less" />
+    <Content Include="Hover-master\less\effects\border-transitions\_underline-from-left.less" />
+    <Content Include="Hover-master\less\effects\border-transitions\_underline-from-right.less" />
+    <Content Include="Hover-master\less\effects\border-transitions\_underline-reveal.less" />
+    <Content Include="Hover-master\less\effects\curls\_curl-bottom-left.less" />
+    <Content Include="Hover-master\less\effects\curls\_curl-bottom-right.less" />
+    <Content Include="Hover-master\less\effects\curls\_curl-top-left.less" />
+    <Content Include="Hover-master\less\effects\curls\_curl-top-right.less" />
+    <Content Include="Hover-master\less\effects\icons\_icon-back.less" />
+    <Content Include="Hover-master\less\effects\icons\_icon-bob.less" />
+    <Content Include="Hover-master\less\effects\icons\_icon-bounce-out.less" />
+    <Content Include="Hover-master\less\effects\icons\_icon-bounce.less" />
+    <Content Include="Hover-master\less\effects\icons\_icon-buzz-out.less" />
+    <Content Include="Hover-master\less\effects\icons\_icon-buzz.less" />
+    <Content Include="Hover-master\less\effects\icons\_icon-down.less" />
+    <Content Include="Hover-master\less\effects\icons\_icon-drop.less" />
+    <Content Include="Hover-master\less\effects\icons\_icon-fade.less" />
+    <Content Include="Hover-master\less\effects\icons\_icon-float-away.less" />
+    <Content Include="Hover-master\less\effects\icons\_icon-float.less" />
+    <Content Include="Hover-master\less\effects\icons\_icon-forward.less" />
+    <Content Include="Hover-master\less\effects\icons\_icon-grow-rotate.less" />
+    <Content Include="Hover-master\less\effects\icons\_icon-grow.less" />
+    <Content Include="Hover-master\less\effects\icons\_icon-hang.less" />
+    <Content Include="Hover-master\less\effects\icons\_icon-pop.less" />
+    <Content Include="Hover-master\less\effects\icons\_icon-pulse-grow.less" />
+    <Content Include="Hover-master\less\effects\icons\_icon-pulse-shrink.less" />
+    <Content Include="Hover-master\less\effects\icons\_icon-pulse.less" />
+    <Content Include="Hover-master\less\effects\icons\_icon-push.less" />
+    <Content Include="Hover-master\less\effects\icons\_icon-rotate.less" />
+    <Content Include="Hover-master\less\effects\icons\_icon-shrink.less" />
+    <Content Include="Hover-master\less\effects\icons\_icon-sink-away.less" />
+    <Content Include="Hover-master\less\effects\icons\_icon-sink.less" />
+    <Content Include="Hover-master\less\effects\icons\_icon-spin.less" />
+    <Content Include="Hover-master\less\effects\icons\_icon-up.less" />
+    <Content Include="Hover-master\less\effects\icons\_icon-wobble-horizontal.less" />
+    <Content Include="Hover-master\less\effects\icons\_icon-wobble-vertical.less" />
+    <Content Include="Hover-master\less\effects\shadow-and-glow-transitions\_box-shadow-inset.less" />
+    <Content Include="Hover-master\less\effects\shadow-and-glow-transitions\_box-shadow-outset.less" />
+    <Content Include="Hover-master\less\effects\shadow-and-glow-transitions\_float-shadow.less" />
+    <Content Include="Hover-master\less\effects\shadow-and-glow-transitions\_glow.less" />
+    <Content Include="Hover-master\less\effects\shadow-and-glow-transitions\_grow-shadow.less" />
+    <Content Include="Hover-master\less\effects\shadow-and-glow-transitions\_shadow-radial.less" />
+    <Content Include="Hover-master\less\effects\shadow-and-glow-transitions\_shadow.less" />
+    <Content Include="Hover-master\less\effects\speech-bubbles\_bubble-bottom.less" />
+    <Content Include="Hover-master\less\effects\speech-bubbles\_bubble-float-bottom.less" />
+    <Content Include="Hover-master\less\effects\speech-bubbles\_bubble-float-left.less" />
+    <Content Include="Hover-master\less\effects\speech-bubbles\_bubble-float-right.less" />
+    <Content Include="Hover-master\less\effects\speech-bubbles\_bubble-float-top.less" />
+    <Content Include="Hover-master\less\effects\speech-bubbles\_bubble-left.less" />
+    <Content Include="Hover-master\less\effects\speech-bubbles\_bubble-right.less" />
+    <Content Include="Hover-master\less\effects\speech-bubbles\_bubble-top.less" />
+    <Content Include="Hover-master\less\hover.less" />
+    <Content Include="Hover-master\less\_hacks.less" />
+    <Content Include="Hover-master\less\_mixins.less" />
+    <Content Include="Hover-master\less\_options.less" />
+    <Content Include="Hover-master\package.json" />
+    <Content Include="Hover-master\README.md" />
+    <Content Include="Hover-master\scss\effects\2d-transitions\_bob.scss" />
+    <Content Include="Hover-master\scss\effects\2d-transitions\_bounce-in.scss" />
+    <Content Include="Hover-master\scss\effects\2d-transitions\_bounce-out.scss" />
+    <Content Include="Hover-master\scss\effects\2d-transitions\_buzz-out.scss" />
+    <Content Include="Hover-master\scss\effects\2d-transitions\_buzz.scss" />
+    <Content Include="Hover-master\scss\effects\2d-transitions\_float.scss" />
+    <Content Include="Hover-master\scss\effects\2d-transitions\_grow-rotate.scss" />
+    <Content Include="Hover-master\scss\effects\2d-transitions\_grow.scss" />
+    <Content Include="Hover-master\scss\effects\2d-transitions\_hang.scss" />
+    <Content Include="Hover-master\scss\effects\2d-transitions\_pop.scss" />
+    <Content Include="Hover-master\scss\effects\2d-transitions\_pulse-grow.scss" />
+    <Content Include="Hover-master\scss\effects\2d-transitions\_pulse-shrink.scss" />
+    <Content Include="Hover-master\scss\effects\2d-transitions\_pulse.scss" />
+    <Content Include="Hover-master\scss\effects\2d-transitions\_push.scss" />
+    <Content Include="Hover-master\scss\effects\2d-transitions\_rotate.scss" />
+    <Content Include="Hover-master\scss\effects\2d-transitions\_shrink.scss" />
+    <Content Include="Hover-master\scss\effects\2d-transitions\_sink.scss" />
+    <Content Include="Hover-master\scss\effects\2d-transitions\_skew-backward.scss" />
+    <Content Include="Hover-master\scss\effects\2d-transitions\_skew-forward.scss" />
+    <Content Include="Hover-master\scss\effects\2d-transitions\_skew.scss" />
+    <Content Include="Hover-master\scss\effects\2d-transitions\_wobble-bottom.scss" />
+    <Content Include="Hover-master\scss\effects\2d-transitions\_wobble-horizontal.scss" />
+    <Content Include="Hover-master\scss\effects\2d-transitions\_wobble-skew.scss" />
+    <Content Include="Hover-master\scss\effects\2d-transitions\_wobble-to-bottom-right.scss" />
+    <Content Include="Hover-master\scss\effects\2d-transitions\_wobble-to-top-right.scss" />
+    <Content Include="Hover-master\scss\effects\2d-transitions\_wobble-top.scss" />
+    <Content Include="Hover-master\scss\effects\2d-transitions\_wobble-vertical.scss" />
+    <Content Include="Hover-master\scss\effects\background-transitions\_back-pulse.scss" />
+    <Content Include="Hover-master\scss\effects\background-transitions\_bounce-to-bottom.scss" />
+    <Content Include="Hover-master\scss\effects\background-transitions\_bounce-to-left.scss" />
+    <Content Include="Hover-master\scss\effects\background-transitions\_bounce-to-right.scss" />
+    <Content Include="Hover-master\scss\effects\background-transitions\_bounce-to-top.scss" />
+    <Content Include="Hover-master\scss\effects\background-transitions\_fade.scss" />
+    <Content Include="Hover-master\scss\effects\background-transitions\_radial-in.scss" />
+    <Content Include="Hover-master\scss\effects\background-transitions\_radial-out.scss" />
+    <Content Include="Hover-master\scss\effects\background-transitions\_rectangle-in.scss" />
+    <Content Include="Hover-master\scss\effects\background-transitions\_rectangle-out.scss" />
+    <Content Include="Hover-master\scss\effects\background-transitions\_shutter-in-horizontal.scss" />
+    <Content Include="Hover-master\scss\effects\background-transitions\_shutter-in-vertical.scss" />
+    <Content Include="Hover-master\scss\effects\background-transitions\_shutter-out-horizontal.scss" />
+    <Content Include="Hover-master\scss\effects\background-transitions\_shutter-out-vertical.scss" />
+    <Content Include="Hover-master\scss\effects\background-transitions\_sweep-to-bottom.scss" />
+    <Content Include="Hover-master\scss\effects\background-transitions\_sweep-to-left.scss" />
+    <Content Include="Hover-master\scss\effects\background-transitions\_sweep-to-right.scss" />
+    <Content Include="Hover-master\scss\effects\background-transitions\_sweep-to-top.scss" />
+    <Content Include="Hover-master\scss\effects\border-transitions\_border-fade.scss" />
+    <Content Include="Hover-master\scss\effects\border-transitions\_hollow.scss" />
+    <Content Include="Hover-master\scss\effects\border-transitions\_outline-in.scss" />
+    <Content Include="Hover-master\scss\effects\border-transitions\_outline-out.scss" />
+    <Content Include="Hover-master\scss\effects\border-transitions\_overline-from-center.scss" />
+    <Content Include="Hover-master\scss\effects\border-transitions\_overline-from-left.scss" />
+    <Content Include="Hover-master\scss\effects\border-transitions\_overline-from-right.scss" />
+    <Content Include="Hover-master\scss\effects\border-transitions\_overline-reveal.scss" />
+    <Content Include="Hover-master\scss\effects\border-transitions\_reveal.scss" />
+    <Content Include="Hover-master\scss\effects\border-transitions\_ripple-in.scss" />
+    <Content Include="Hover-master\scss\effects\border-transitions\_ripple-out.scss" />
+    <Content Include="Hover-master\scss\effects\border-transitions\_round-corners.scss" />
+    <Content Include="Hover-master\scss\effects\border-transitions\_trim.scss" />
+    <Content Include="Hover-master\scss\effects\border-transitions\_underline-from-center.scss" />
+    <Content Include="Hover-master\scss\effects\border-transitions\_underline-from-left.scss" />
+    <Content Include="Hover-master\scss\effects\border-transitions\_underline-from-right.scss" />
+    <Content Include="Hover-master\scss\effects\border-transitions\_underline-reveal.scss" />
+    <Content Include="Hover-master\scss\effects\curls\_curl-bottom-left.scss" />
+    <Content Include="Hover-master\scss\effects\curls\_curl-bottom-right.scss" />
+    <Content Include="Hover-master\scss\effects\curls\_curl-top-left.scss" />
+    <Content Include="Hover-master\scss\effects\curls\_curl-top-right.scss" />
+    <Content Include="Hover-master\scss\effects\icons\_icon-back.scss" />
+    <Content Include="Hover-master\scss\effects\icons\_icon-bob.scss" />
+    <Content Include="Hover-master\scss\effects\icons\_icon-bounce-out.scss" />
+    <Content Include="Hover-master\scss\effects\icons\_icon-bounce.scss" />
+    <Content Include="Hover-master\scss\effects\icons\_icon-buzz-out.scss" />
+    <Content Include="Hover-master\scss\effects\icons\_icon-buzz.scss" />
+    <Content Include="Hover-master\scss\effects\icons\_icon-down.scss" />
+    <Content Include="Hover-master\scss\effects\icons\_icon-drop.scss" />
+    <Content Include="Hover-master\scss\effects\icons\_icon-fade.scss" />
+    <Content Include="Hover-master\scss\effects\icons\_icon-float-away.scss" />
+    <Content Include="Hover-master\scss\effects\icons\_icon-float.scss" />
+    <Content Include="Hover-master\scss\effects\icons\_icon-forward.scss" />
+    <Content Include="Hover-master\scss\effects\icons\_icon-grow-rotate.scss" />
+    <Content Include="Hover-master\scss\effects\icons\_icon-grow.scss" />
+    <Content Include="Hover-master\scss\effects\icons\_icon-hang.scss" />
+    <Content Include="Hover-master\scss\effects\icons\_icon-pop.scss" />
+    <Content Include="Hover-master\scss\effects\icons\_icon-pulse-grow.scss" />
+    <Content Include="Hover-master\scss\effects\icons\_icon-pulse-shrink.scss" />
+    <Content Include="Hover-master\scss\effects\icons\_icon-pulse.scss" />
+    <Content Include="Hover-master\scss\effects\icons\_icon-push.scss" />
+    <Content Include="Hover-master\scss\effects\icons\_icon-rotate.scss" />
+    <Content Include="Hover-master\scss\effects\icons\_icon-shrink.scss" />
+    <Content Include="Hover-master\scss\effects\icons\_icon-sink-away.scss" />
+    <Content Include="Hover-master\scss\effects\icons\_icon-sink.scss" />
+    <Content Include="Hover-master\scss\effects\icons\_icon-spin.scss" />
+    <Content Include="Hover-master\scss\effects\icons\_icon-up.scss" />
+    <Content Include="Hover-master\scss\effects\icons\_icon-wobble-horizontal.scss" />
+    <Content Include="Hover-master\scss\effects\icons\_icon-wobble-vertical.scss" />
+    <Content Include="Hover-master\scss\effects\shadow-and-glow-transitions\_box-shadow-inset.scss" />
+    <Content Include="Hover-master\scss\effects\shadow-and-glow-transitions\_box-shadow-outset.scss" />
+    <Content Include="Hover-master\scss\effects\shadow-and-glow-transitions\_float-shadow.scss" />
+    <Content Include="Hover-master\scss\effects\shadow-and-glow-transitions\_glow.scss" />
+    <Content Include="Hover-master\scss\effects\shadow-and-glow-transitions\_grow-shadow.scss" />
+    <Content Include="Hover-master\scss\effects\shadow-and-glow-transitions\_shadow-radial.scss" />
+    <Content Include="Hover-master\scss\effects\shadow-and-glow-transitions\_shadow.scss" />
+    <Content Include="Hover-master\scss\effects\speech-bubbles\_bubble-bottom.scss" />
+    <Content Include="Hover-master\scss\effects\speech-bubbles\_bubble-float-bottom.scss" />
+    <Content Include="Hover-master\scss\effects\speech-bubbles\_bubble-float-left.scss" />
+    <Content Include="Hover-master\scss\effects\speech-bubbles\_bubble-float-right.scss" />
+    <Content Include="Hover-master\scss\effects\speech-bubbles\_bubble-float-top.scss" />
+    <Content Include="Hover-master\scss\effects\speech-bubbles\_bubble-left.scss" />
+    <Content Include="Hover-master\scss\effects\speech-bubbles\_bubble-right.scss" />
+    <Content Include="Hover-master\scss\effects\speech-bubbles\_bubble-top.scss" />
+    <Content Include="Hover-master\scss\hover.scss" />
+    <Content Include="Hover-master\scss\_hacks.scss" />
+    <Content Include="Hover-master\scss\_mixins.scss" />
+    <Content Include="Hover-master\scss\_options.scss" />
+    <Content Include="Assets\btn-social\.editorconfig" />
+    <Content Include="Assets\btn-social\.gitignore" />
+    <Content Include="Assets\btn-social\assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="Assets\btn-social\assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Assets\btn-social\assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="Assets\btn-social\assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Assets\btn-social\assets\fonts\FontAwesome.otf" />
+    <Content Include="Assets\btn-social\bootstrap-social.less" />
+    <Content Include="Assets\btn-social\bootstrap-social.scss" />
+    <Content Include="Assets\btn-social\bower.json" />
+    <Content Include="Assets\btn-social\LICENSE" />
+    <Content Include="Assets\btn-social\package.json" />
+    <Content Include="Assets\btn-social\README.md" />
+    <None Include="Properties\PublishProfiles\zengxiong - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\zxiong1008.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\dotdotdot\bower.json" />
+    <Content Include="Scripts\dotdotdot\dotdotdot.jquery.json" />
+    <Content Include="Scripts\dotdotdot\package.json" />
+    <Content Include="Scripts\dotdotdot\README.md" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\dotdotdot\gulpfile.js" />
+    <Content Include="Scripts\dotdotdot\index.html" />
+    <Content Include="Scripts\dotdotdot\LICENSE.txt" />
+    <Content Include="Scripts\dotdotdot\src\jquery.dotdotdot.js" />
+    <Content Include="Scripts\dotdotdot\src\jquery.dotdotdot.min.js" />
+    <Content Include="Scripts\dotdotdot\src\jquery.dotdotdot.min.umd.js" />
+    <Content Include="Scripts\jquery.dotdotdot.js" />
+    <Content Include="Scripts\jquery.dotdotdot.min.js" />
+    <Content Include="Scripts\jquery.dotdotdot.min.umd.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shAutoloader.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushAppleScript.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushAS3.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushBash.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushColdFusion.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushCpp.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushCSharp.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushCss.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushDelphi.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushDiff.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushErlang.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushGroovy.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushJava.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushJavaFX.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushJScript.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushPerl.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushPhp.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushPlain.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushPowerShell.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushPython.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushRuby.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushSass.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushScala.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushSql.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushVb.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushXml.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shCore.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shLegacy.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shAutoloader.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushAppleScript.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushAS3.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushBash.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushColdFusion.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushCpp.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushCSharp.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushCss.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushDelphi.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushDiff.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushErlang.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushGroovy.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushJava.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushJavaFX.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushJScript.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushPerl.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushPhp.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushPlain.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushPowerShell.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushPython.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushRuby.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushSass.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushScala.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushSql.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushVb.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushXml.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shCore.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shLegacy.js" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shCore.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shCoreDefault.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shCoreDjango.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shCoreEclipse.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shCoreEmacs.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shCoreFadeToGrey.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shCoreMDUltra.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shCoreMidnight.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shCoreRDark.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shThemeDefault.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shThemeDjango.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shThemeEclipse.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shThemeEmacs.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shThemeFadeToGrey.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shThemeMDUltra.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shThemeMidnight.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shThemeRDark.css" />
+    <Content Include="Scripts\tinymce\jquery.tinymce.min.js" />
+    <Content Include="Scripts\tinymce\license.txt" />
+    <Content Include="Scripts\tinymce\plugins\advlist\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\anchor\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\autolink\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\autoresize\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\autosave\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\bbcode\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\charmap\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\codesample\css\prism.css" />
+    <Content Include="Scripts\tinymce\plugins\codesample\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\code\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\colorpicker\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\contextmenu\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\directionality\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-cool.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-cry.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-embarassed.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-foot-in-mouth.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-frown.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-innocent.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-kiss.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-laughing.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-money-mouth.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-sealed.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-smile.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-surprised.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-tongue-out.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-undecided.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-wink.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-yell.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\example\dialog.html" />
+    <Content Include="Scripts\tinymce\plugins\example\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\example_dependency\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\fullpage\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\fullscreen\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\hr\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\imagetools\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\image\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\importcss\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\insertdatetime\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\layer\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\legacyoutput\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\link\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\lists\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\media\moxieplayer.swf" />
+    <Content Include="Scripts\tinymce\plugins\media\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\nonbreaking\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\noneditable\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\pagebreak\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\paste\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\preview\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\print\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\save\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\searchreplace\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\spellchecker\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\tabfocus\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\table\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\template\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\textcolor\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\textpattern\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\visualblocks\css\visualblocks.css" />
+    <Content Include="Scripts\tinymce\plugins\visualblocks\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\visualchars\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\wordcount\plugin.min.js" />
+    <Content Include="Scripts\tinymce\skins\lightgray\content.inline.min.css" />
+    <Content Include="Scripts\tinymce\skins\lightgray\content.min.css" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-small.svg" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.svg" />
+    <Content Include="Scripts\tinymce\skins\lightgray\img\anchor.gif" />
+    <Content Include="Scripts\tinymce\skins\lightgray\img\loader.gif" />
+    <Content Include="Scripts\tinymce\skins\lightgray\img\object.gif" />
+    <Content Include="Scripts\tinymce\skins\lightgray\img\trans.gif" />
+    <Content Include="Scripts\tinymce\skins\lightgray\skin.ie7.min.css" />
+    <Content Include="Scripts\tinymce\skins\lightgray\skin.min.css" />
+    <Content Include="Scripts\tinymce\themes\modern\theme.min.js" />
+    <Content Include="Scripts\tinymce\tinymce.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\Factorial.cshtml" />
+    <Content Include="Views\Home\FiveNumbers.cshtml" />
+    <Content Include="Views\Home\FizzBuzz.cshtml" />
+    <Content Include="Views\Home\Palindrome.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Blog.cshtml" />
+    <Content Include="Views\Home\Portfolio.cshtml" />
+    <Content Include="Views\COMMENTs\Create.cshtml" />
+    <Content Include="Views\COMMENTs\Delete.cshtml" />
+    <Content Include="Views\COMMENTs\Details.cshtml" />
+    <Content Include="Views\COMMENTs\Edit.cshtml" />
+    <Content Include="Views\COMMENTs\Index.cshtml" />
+    <Content Include="private.config" />
+    <Content Include="Views\POSTs\Create.cshtml" />
+    <Content Include="Views\POSTs\Delete.cshtml" />
+    <Content Include="Views\POSTs\Details.cshtml" />
+    <Content Include="Views\POSTs\Edit.cshtml" />
+    <Content Include="Views\POSTs\Index.cshtml" />
+    <Content Include="Scripts\tinymce\langs\readme.md" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-small.eot" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-small.ttf" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-small.woff" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.eot" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.ttf" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.woff" />
+    <Content Include="Zeng Xiong - Resume 2016.pdf" />
+    <Content Include="Zeng Xiong - Resume 2016.docx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49343</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49343/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
