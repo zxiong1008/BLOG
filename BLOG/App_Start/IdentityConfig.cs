@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -34,9 +35,9 @@ namespace BLOG
             myMessage.From = new MailAddress(from);
             myMessage.Subject = message.Subject;
             myMessage.Html = message.Body;
-            
-            //create a web transport for sending email
-            var transportWeb = new Web(apiKey);
+
+			//create a web transport for sending email
+			var transportWeb = new Web(apiKey);
             //send the email
             try
             {

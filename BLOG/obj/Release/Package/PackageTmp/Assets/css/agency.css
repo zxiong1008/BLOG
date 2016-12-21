@@ -414,9 +414,9 @@ font-weight:700;
     }
 }
 /********SCREEN BODY ADJUSTING TO WIDTH CHANGE***********/
-@media screen and (min-width: 200px) {
+/*@media screen and (min-width: 200px) {
     body {
-        /*padding: 50px;*/
+        padding: 50px;
         margin: 0 -55px;
     }
 
@@ -427,7 +427,7 @@ font-weight:700;
         margin: 0 -55px;
     }
         header{
-        /*padding-top: 100px;*/
+        padding-top: 100px;
          margin-bottom: -100px;
           min-height: 100%;
     }
@@ -438,21 +438,21 @@ font-weight:700;
         margin: 0px -55px;
     }        
     header{
-        /*padding-top: 0px;*/
+        padding-top: 0px;
          margin-bottom: -100px;
           min-height: 100%;
     }
-}
+}*/
 
 /*@media screen and (min-width: 1500px) {
     body {
         margin: 0px -55px
     }
 }*/
-    header .intro-text {
-        /*padding-top: 100px;*/
-        /*padding-bottom: 50px;*/
-    }
+    /*header .intro-text {
+        padding-top: 100px;
+        padding-bottom: 50px;
+    }*/
 
         header .intro-text .intro-lead-in {
             font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -472,10 +472,10 @@ font-weight:700;
         }
 
 @media (min-width:768px) {
-    header .intro-text {
-        /*padding-top: 200px;*/
-        /*padding-bottom: 200px;*/
-    }
+    /*header .intro-text {
+        padding-top: 200px;
+        padding-bottom: 200px;
+    }*/
 
         header .intro-text .intro-lead-in {
             font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -497,7 +497,7 @@ font-weight:700;
 }
 /*section{
 padding:100px 0}*/
-section h2.section-heading {
+/*section h2.section-heading {
     font-size: 40px;
     margin-top: 0;
     margin-bottom: 15px;
@@ -510,7 +510,7 @@ section h3.section-subheading {
     font-style: italic;
     font-weight: 400;
     margin-bottom: 75px;
-}
+}*/
 
 @media (min-width:768px) {
     /*section{
@@ -591,11 +591,11 @@ padding:150px 0}}*/
         z-index: 2;
     }
 
-    @media (min-width:767px) {
+    /*@media (min-width:767px) {
         #portfolio .portfolio-item {
             margin: 0 0 30px;
         }
-    }
+    }*/
 
     .timeline {
         list-style: none;
@@ -772,7 +772,7 @@ padding:150px 0}}*/
     }
 
     @media (min-width:1200px) {
-        .timeline > li {
+        /*.timeline > li {
             min-height: 170px;
         }
 
@@ -813,11 +813,7 @@ padding:150px 0}}*/
 
         .team-member p {
             margin-top: 0;
-        }
-
-    aside.clients img {
-        margin: 50px auto;
-    }
+        }*/
 
     section#contact {
         background-color: #fff;
@@ -1026,4 +1022,3 @@ padding:150px 0}}*/
     img::-moz-selection {
         background: 0 0;
     }
-}
