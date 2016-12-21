@@ -1,0 +1,44 @@
+﻿/*------ HOME PAGE BACKGROUND ------*/
+body{
+	background-color: transparent;
+}
+header .intro-text .intro-lead-in,  header .intro-text .intro-heading, .copyright {
+	color: white;
+
+}
+
+/*------home/index page, blinking message------*/
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    20% { opacity:0; }
+    40% { opacity:1; }
+    60% { opacity:0; }
+    80% { opacity:1; }
+    100% { opacity:0; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+/*------footer setup------*/
+footer {
+	position: fixed;
+	padding-top: 1%;
+    bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.2)
+}

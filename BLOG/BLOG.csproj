@@ -473,9 +473,6 @@
     <Content Include="Assets\img\header-bg.jpg" />
     <Content Include="Assets\img\map-image.png" />
     <Content Include="Assets\img\map-image2.png" />
-    <Content Include="Assets\img\nice2.jpg" />
-    <Content Include="Assets\img\nice2b.jpg" />
-    <Content Include="Assets\img\nice2c.jpg" />
     <Content Include="Assets\img\portfolio\dreams-preview.png" />
     <Content Include="Assets\img\portfolio\dreams.png" />
     <Content Include="Assets\img\portfolio\escape-preview.png" />
@@ -520,6 +517,7 @@
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="Content\portfolio.css" />
     <Content Include="Content\SyntaxHighlighter\shCore.css" />
     <Content Include="Content\SyntaxHighlighter\shCoreDefault.css" />
     <Content Include="Content\SyntaxHighlighter\shCoreDjango.css" />
@@ -553,6 +551,7 @@
     <Content Include="Hover-master\photo-stack.png" />
     <Content Include="Hover-master\sequence-logo.png" />
     <Content Include="Hover-master\two-up.png" />
+    <Content Include="images\backg.jpg" />
     <Content Include="images\blog\3.jpg" />
     <Content Include="images\blog\bugtracker1.png" />
     <Content Include="images\blog\bugtracker2.png" />
@@ -1438,6 +1437,14 @@
     <Content Include="Scripts\tinymce\skins\lightgray\skin.min.css" />
     <Content Include="Scripts\tinymce\themes\modern\theme.min.js" />
     <Content Include="Scripts\tinymce\tinymce.min.js" />
+    <Content Include="Scripts\typed.js-master\dist\typed.min.js" />
+    <Content Include="Scripts\typed.js-master\gulpfile.js" />
+    <Content Include="Scripts\typed.js-master\index.htm" />
+    <Content Include="Scripts\typed.js-master\js\typed.js" />
+    <Content Include="Scripts\typed.js-master\LICENSE.txt" />
+    <Content Include="Scripts\typed.js-master\logo-cropped.png" />
+    <Content Include="Scripts\typed.js-master\logo.png" />
+    <Content Include="Scripts\typed.js-master\main.css" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -1503,6 +1510,10 @@
     <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.woff" />
     <Content Include="Zeng Xiong - Resume 2016.pdf" />
     <Content Include="Zeng Xiong - Resume 2016.docx" />
+    <Content Include="Scripts\typed.js-master\.gitignore" />
+    <Content Include="Scripts\typed.js-master\bower.json" />
+    <Content Include="Scripts\typed.js-master\package.json" />
+    <Content Include="Scripts\typed.js-master\README.md" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
