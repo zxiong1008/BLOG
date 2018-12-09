@@ -9,13 +9,15 @@ using System.Web.Mvc;
 using BLOG.Models;
 using System.IO;
 using PagedList;
+using System.Drawing;
+using System.Drawing.Imaging;
 
 namespace BLOG.Controllers
 {
     [Authorize(Roles = "Admin")]
     public class POSTsController : Controller
     {
-        int CONST_PAGE = 6; //const number set
+        static int CONST_PAGE = 6; //const number set
         private ApplicationDbContext db = new ApplicationDbContext();
         //by default the posts are "HTTPGET"
         //always have a post with a submit with the controller
@@ -116,9 +118,15 @@ namespace BLOG.Controllers
                 //restricting the valid file formats to images only
                 if (ImageValidator.IsWebFriendlyImage(image))
                 {
-                    var fileName = Path.GetFileName(image.FileName);
-                    image.SaveAs(Path.Combine(Server.MapPath("~/images/blog/"), fileName));
-                    Post.MEDIA = "~/images/blog/" + fileName;
+                    using (var reader = new System.IO.BinaryReader(image.InputStream))
+                    {
+                        reader.BaseStream.Position = 0;
+                        Post.MEDIA = reader.ReadBytes(image.ContentLength);
+                    }
+
+                    //var fileName = Path.GetFileName(image.FileName);
+                    //image.SaveAs(Path.Combine(Server.MapPath("~/images/blog/"), fileName));
+                    //Post.MEDIA = "~/images/blog/" + fileName;
                 }
                 Post.CREATED = new DateTimeOffset(DateTime.Now);
 
@@ -155,11 +163,21 @@ namespace BLOG.Controllers
             Post.UPDATED = new DateTimeOffset(DateTime.Now);
             if (ModelState.IsValid)
             {
+
                 if (ImageValidator.IsWebFriendlyImage(image))
                 {
-                    var fileName = Path.GetFileName(image.FileName);
-                    image.SaveAs(Path.Combine(Server.MapPath("~/images/blog/"), fileName));
-                    Post.MEDIA = "~/images/blog/" + fileName;
+                    //var fileName = Path.GetFileName(image.FileName);
+                    //image.SaveAs(Path.Combine(Server.MapPath("~/images/blog/"), fileName));
+                    //Post.MEDIA = "~/images/blog/" + fileName;
+
+                    using (var reader = new System.IO.BinaryReader(image.InputStream))
+                    {
+                        reader.BaseStream.Position = 0;
+                        Post.MEDIA = reader.ReadBytes(image.ContentLength);
+                    }
+
+                    //ViewBag.Image = ConvertToBytes(image);
+                    //Console.WriteLine();
                 }
 
                 db.Entry(Post).State = EntityState.Modified;
@@ -204,6 +222,20 @@ namespace BLOG.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+
+        private byte[] ConvertToBytes(HttpPostedFileBase image)
+        {
+
+            byte[] imageBytes = null;
+
+            BinaryReader reader = new BinaryReader(image.InputStream);
+
+            imageBytes = reader.ReadBytes((int)image.ContentLength);
+
+            return imageBytes;
+
         }
     }
 }

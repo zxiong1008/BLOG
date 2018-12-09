@@ -16,9 +16,9 @@ namespace BLOG.Models
             var textReverse = new string(text.Reverse().ToArray());
 
             if (text == textReverse)
-                outputWord = "\"" + inputWord + "\" is a palindrome.";
+                outputWord = "<mark>\"" + inputWord + "\"</mark> is a palindrome.";
             else
-                outputWord = "\"" + inputWord + "\" is not a palindrome.";
+                outputWord =  "<mark>\"" + inputWord + "\"</mark> is not a palindrome.";
         }
     }
 }

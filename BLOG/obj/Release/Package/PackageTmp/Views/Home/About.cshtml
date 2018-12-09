@@ -1,188 +1,432 @@
-﻿<style>
+﻿@*<style>
+		html {
+			background-image: url('../../images/trail2.jpg');
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			text-align: center;
+			height: 100vh;
+		}
+	</style>*@
+<style>
 	body {
-	background-color: black;
-	color: white;
+		background-color: transparent;
 	}
-
 </style>
-
 <body>
+
     @* About Section *@
-    <div class="row" id="about">
-        <div class="col-lg-12 text-center">
-            <br /><br />
-            <div class="row">
-                <h1 class="section-heading">Zeng Xiong</h1>
-				<h3>Aka Evil Genius</h3>
-            </div>
-            <div id="portfolio">
-                <div class="portfolio-item">
-                    <a href="~/Home/Portfolio" class="portfolio-link" data-toggle="modal">
-                        <!--myModal1-->
-                        <div class="portfolio-hover img-responsive img-circle">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-folder-open fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="~/Assets/img/team/zeng1.jpg" class="img-responsive img-circle">
-                    </a>
+    <div class="row row-black">
+
+        <div class="col-xs-8">
+            <div class="intro-text">
+                <div class="intro-heading">Zeng Xiong</div>
+                <div class="intro-lead-in">
+                    <span id="typed"></span>
                 </div>
             </div>
+        </div>
+        <div class="col-xs-4">
+            <a href="~/Home/Portfolio">
+                <img src="~/images/zeng1.jpg" class="img-responsive img-thumbnail about-img">
+            </a>
+        </div>
+    </div>
+    <div class="row row-white">
+        <div class="col-xs-4">
+            <img class="img-responsive img-thumbnail" src="~/Assets/img/about/vw-icon.jpg" alt="">
+        </div>
+        <div class="col-xs-8">
+            <div class="about-heading">
+                <h3>🏠 VALDESE WEAVERS INC. <span style="font-weight: normal">(<i>Valdese, NC</i>)</span></h3>
+                <h4>📅 FEBRUARY 2018 - PRESENT</h4>
+                <h4>🐱‍👤<i>Web Developer</i></h4>
+            </div>
+            <div class="about-body">
+                <p>
+                    After working for a full year at Abacus Group LLC, I decided to relocate to a new opportunity
+                    near home. I was able to develop new innovative web applications and have the free-will to design 
+                    the front-end web pages.
 
-            <div class="row">
-                <h3 class="section-subheading text-muted">
-                    Computer Engineer, Electrical Engineer, and Web Developer
-                </h3>
+                    <ol class="list-group" style="list-style: decimal inside">
+                        <li>
+                            <b>Track-It</b> – A ticketing system used to manage and reply to software defects,
+                            enhancements, change requests, production help, timesheets, store client information,
+                            and answer any client questions.
+                        </li>
+                        <li>
+                            <b>BitBucket</b> – A source control repository using Git to manage all continuous
+                            integration environments.
+                        </li>
+                        <li>
+                            <b>Applications</b> – <mark>Web/console application</mark> using the .NET framework 
+                            in C# and SQL database. Web application sole purpose is to create/edit/delete/view 
+                            internal data. Console applications were used to import/export data from an external 
+                            party service or FTP site
+                        </li>
+                    </ol>
+                </p>
+            </div> 
+        </div>
+    </div>
+    <div class="row row-white">
+        <div class="col-xs-4">
+            <img class="img-responsive img-thumbnail" src="~/Assets/img/about/abacus.jpg" alt="">
+        </div>
+        <div class="col-xs-8">
+            <div class="about-heading">
+                <h3>🏠 ABACUS GROUP LLC <span style="font-weight: normal">(<i>Charlotte, NC</i>)</span></h3>
+                <h4>📅 MARCH 2017 - FEBRUARY 2018</h4>
+                <h4>🐱‍💻 <i>Jr. Developer</i> (YES!! 🙌🙌🙌)</h4>
+            </div>
+            <div class="about-body">
+                <p>
+                    It took one year before I landed an astounding job at Abacus Group LLC.
+                    This company is a private cloud-base IT solution for hedgefunds.
+                    I was working under some of the smartest engineers creating secure and
+                    real-time solutions.
+
+                    <ol class="list-group" style="list-style: decimal inside">
+                        <li>
+                            <b>ConnectWise</b> – A ticketing system used to manage and reply to software defects,
+                            enhancements, change requests, production help, timesheets, store client information,
+                            and answer any client questions.
+                        </li>
+                        <li>
+                            <b>BitBucket</b> – A source control repository using Git to manage all continuous
+                            integration environments.
+                        </li>
+                        <li>
+                            <b>Applications</b> – <mark>Web/console application</mark> using the ASP.NET
+                            framework in C#, and SQL database. Reports are written using the EPPLUS library,
+                            and published daily.
+                        </li>
+                        <li>
+                            <b>Selenium</b> – Writing script to test web applications and logging it.
+                        </li>
+                    </ol>
+                </p>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-lg-12">
-            <ul class="timeline">
-                <li>
-                    <div class="timeline-image">
-                        <div id="portfolio">
-                            <div class="portfolio-item">
-                                <a href="http://www.coderfoundry.com/" target="_blank" class="portfolio-link" data-toggle="modal">
-                                    <!--myModal1-->
-                                    <div class="portfolio-hover img-circle img-responsive">
-                                        <div class="portfolio-hover-content">
-                                            <i class="fa fa-code fa-3x"></i>
-                                        </div>
-                                    </div>
-                                    <img class="img-circle img-responsive" src="/Assets/img/about/cf.jpg" alt="">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="timeline-panel">
-                        <div class="timeline-heading">
-                            <h4>MARCH 2016</h4>
-                            <h4 class="subheading">New Journey at Coder Foundry</h4>
-                        </div>
-                        <div class="timeline-body">
-                            <p class="text-muted">
-                                After graduation, my collegues spoke to me about Coder Foundry, a well-reputatable bootcamp
-                                which offers full-stack .net development. I was very fortunate to get accepted into this
-                                bootcamp because I did not applied 3 weeks before the course began. Instead, I applied 1 week
-                                prior to the start date, and normally students would not get accepted at this time.
-                                Fortunately, there was a student who changed seats from this session, to the next coming up one.
-                                And it was thanks to Hasim and Andrew that I am here at Coder Foundry today accessing
-                                an incredible resource of information.
-                            </p>
-                        </div>
-                    </div>
-                </li>
-                <li class="timeline-inverted">
-                    <div class="timeline-image">
-                        <div id="portfolio">
-                            <div class="portfolio-item">
-                                <a href="http://engr.uncc.edu/" target="_blank" class="portfolio-link" data-toggle="modal">
-                                    <!--myModal1-->
-                                    <div class="portfolio-hover img-circle img-responsive">
-                                        <div class="portfolio-hover-content">
-                                            <i class="fa fa-cogs fa-3x"></i>
-                                        </div>
-                                    </div>
-                                    <img class="img-circle img-responsive" src="~/Assets/img/about/uncc.jpg" alt="">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="timeline-panel">
-                        <div class="timeline-heading">
-                            <h4>AUGUST 2011 - DECEMBER 2015</h4>
-                            <h4 class="subheading">Closing the books at UNCC</h4>
-                        </div>
-                        <div class="timeline-body">
-                            <p class="text-muted">
-                                Came to UNC Charlotte with with no clue where I belong. After the first semester, I felt that connection
-                                and interest with coding using C++, so I persued it. Then a year later, I got accepted into
-                                the William States Lee College of Engineering at UNC Charlotte. Then the folowing semester, I applied for
-                                a dual degree in Computer and Electrial Engineering. This pushed me to challenge myself and my limitations.
-                                After 4 years of enduring studious nights at the library, and work on the weekends,
-                                I am proud to say that I've graduated UNC Charlotte with a Bachelor's Degree of Science in Computer Engineering and
-                                a Bachelor's  Degree of Science in Electrical Engineering, which are both ABET accredited.
-                            </p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="timeline-image">
-                        <div id="portfolio">
-                            <div class="portfolio-item">
-                                <a href="http://www.keypersystems.com/" target="_blank" class="portfolio-link" data-toggle="modal">
-                                    <!--myModal1-->
-                                    <div class="portfolio-hover img-circle img-responsive">
-                                        <div class="portfolio-hover-content">
-                                            <i class="fa fa-cog fa-spin fa-3x"></i>
-                                        </div>
-                                    </div>
-                                    <img class="img-circle img-responsive" src="~/Assets/img/about/Logo2016.jpg" alt="">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="timeline-panel">
-                        <div class="timeline-heading">
-                            <h4>OCTOBER 2015 - DECEMBER 2015</h4>
-                            <h4 class="subheading">Computer Internship at KEYper Systems</h4>
-                        </div>
-                        <div class="timeline-body">
-                            <p class="text-muted">
-                                Joined the KEYper Team to help innonvate and improve key asset security.
-                            </p>
-                        </div>
-                    </div>
-                </li>
-                <li class="timeline-inverted">
-                    <div class="timeline-image">
-                        <div id="portfolio">
-                            <div class="portfolio-item">
-                                <a href="https://www.facebook.com/Summer-Fresh-Flower-Farm-814108315370232/" target="_blank" class="portfolio-link" data-toggle="modal">
-                                    <!--myModal1-->
-                                    <div class="portfolio-hover img-circle img-responsive">
-                                        <div class="portfolio-hover-content">
-                                            <i class="fa fa-leaf fa-3x"></i>
-                                        </div>
-                                    </div>
-                                    <img class="img-circle img-responsive" src="~/Assets/img/about/sff.jpg" alt="">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="timeline-panel">
-                        <div class="timeline-heading">
-                            <h4>AUGUST 2005 - PRESENT DAY</h4>
-                            <h4 class="subheading">SUMMER FRESH FLOWERS FARM</h4>
-                        </div>
-                        <div class="timeline-body">
-                            <p class="text-muted">
-                                After a recession, my family and I moved to North Carolina seeking better opportunties.
-                                We started our own family business of growing and sellings flowers at the Farmers Market.
-                                We assist in any floral arrangements varying from house warming events to wedding.
-                            </p>
-                        </div>
-                    </div>
-                </li>
-                <li class="timeline-inverted">
-                    <div class="timeline-image">
-                        <div id="portfolio">
-                            <div class="portfolio-item">
-                                <a href="~/Home/Contact" target="_blank" class="portfolio-link" data-toggle="modal">
-                                    <!--myModal1-->
-                                    <div class="portfolio-hover img-circle img-responsive" style="color: #fff; margin: 40px 0 0 10px; ">
-                                        <div class="portfolio-hover-content">
-                                            <i class="fa fa-paper-plane-o fa-3x" style="color :#222; margin: 0px 35px 20px 0px;"></i>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <h4>Be A Part<br>Of My<br>Timeline!</h4>
-                    </div>
-                </li>
-            </ul>
+    <div class="row row-white">
+        <div class="col-xs-4">
+            <img class="img-responsive img-thumbnail" src="~/Assets/img/about/Logo2016.jpg" alt="">
+        </div>
+        <div class="col-xs-8">
+            <div class="about-heading">
+                <h3>🏠 KEYPER SYSTEMS <span style="font-weight: normal">(<i>Harrisburg, NC</i>)</span></h3>
+                <h4>📅 FEBRUARY 2016</h4>
+                <h4>🐱‍🚀 <i>Software Tester</i></h4>
+            </div>
+            <div class="about-body">
+                <p>
+                    <ol class="list-group" style="list-style: decimal inside">
+                        <li>
+                            <b>MK III & MK V Diagnostics</b> – Test all behaviors and functionality of the
+                            MK III and MK V systems. If any failures occur, these issues were to be fixed
+                            or replaced before shipped out to loyal customers.
+                        </li>
+                        <li>
+                            <b><mark>Commission Calculator</mark></b> – Wrote VBA code for a commission
+                            datasheet using excel. The macro was written to clear entries, show samples,
+                            and calculates total commission to be earned using a given data tables with
+                            a hidden spreadsheet.
+                        </li>
+                        <li>
+                            <b>MK V PCB</b> – diagnose and repair broken PCB boards sent back from
+                            consumer to repair, such as ICs, push-pens, solenoids, springs, and plungers.
+                        </li>
+                        <li>
+                            <b>HTK Prototype</b> – Life cycle test of door latch using a LED indicator,
+                            and vibrations test on the PC, and LCD.
+                        </li>
+                    </ol>
+                </p>
+            </div>
         </div>
     </div>
+    <div class="row row-white">
+        <div class="col-xs-4">
+            <img class="img-responsive img-thumbnail" src="/Assets/img/about/cf.jpg" alt="">
+        </div>
+        <div class="col-xs-8">
+            <div class="about-heading">
+                <h3>🏠 CODER FOUNDRY <span style="font-weight: normal">(<i>Charlotte, NC</i>)</span></h3>
+                <h4>📅 MARCH 2016 - JUNE 2016</h4>
+                <h4>🐱‍💻 <i>New Journey at Coder Foundry</i></h4>
+            </div>
+            <div class="about-body">
+                <p>
+                    After graduation, my collegues spoke to me about Coder Foundry, a well-reputatable bootcamp
+                    which offers full-stack .net development. I was very fortunate to get accepted into this
+                    bootcamp because I did not applied 3 weeks before the course began. Instead, I applied 1 week
+                    prior to the start date, and normally students would not get accepted at this time.
+                    Fortunately, there was a student who changed seats from this session, to the next coming up one.
+                    And it was thanks to Hasim and Andrew that I am here at Coder Foundry today accessing
+                    an incredible resource of information.
+
+                    <ol class="list-group" style="list-style: decimal inside">
+                        <li>
+                            <b>Personal Blog</b> – Developed a web application using the MVC architecture,
+                            which includes a post, comments, media, about me, contact, portfolio (JS & c#),
+                            email verification, SendGrid, register, and logins page.
+                        </li>
+                        <li>
+                            <b>BugTracker Application</b> – Developed a web application using the MVC architecture,
+                            which includes a projects, tickets, comments, attachments, media, notification, history,
+                            third-party login, email verification, SendGrid, forgot my password, register, and login.
+                        </li>
+                        <li>
+                            <b>Household Application</b> – Developed a financial portal built using Microsoft MVC,
+                            Entity Framework, Code-First database creation, LINQ, and SQL. The Household Budgeter
+                            is a Web-based software application designed for creating and managing budgets for
+                            household finances and the balancing of bank accounts. It functions as an online service
+                            that may be used in multiple households/families throughout the world.
+                        </li>
+                    </ol>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row row-white">
+        <div class="col-xs-4">
+            <img class="img-responsive img-thumbnail" src="~/Assets/img/about/Logo2016.jpg" alt="">
+        </div>
+        <div class="col-xs-8">
+            <div class="about-heading">
+                <h3>🏠 KEYPER SYSTEMS <span style="font-weight: normal">(<i>Harrisburg, NC</i>)</span></h3>
+                <h4>📅 OCTOBER 2015 - DECEMBER 2015</h4>
+                <h4>🐱‍🚀 <i>Computer Engineering Internship</i></h4>
+            </div>
+            <div class="about-body">
+                <p>
+                    Joined the KEYper Team to help innonvate and improve key asset security.
+                    <ol class="list-group" style="list-style: decimal inside">
+                        <li>
+                            <b>FOB Life Cycle Project</b> – Robotic mechanism which test the life span of a
+                            KEYper Systems product using an Arduino and Stepper Motor
+                        </li>
+                        <li>
+                            <b>MK V Diagnostics</b> – Test and diagnose all the features of a KEYper Systems
+                            security product called the MK V to make sure it is valid/usable before
+                            shipping out to customers.
+                        </li>
+                        <li>
+                            <b>Quick Start Guide</b> – A single page guide which helps new users understand
+                            how to use the MK unit and their software, such as adding/deleting a new user and FOB.
+                        </li>
+                    </ol>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row row-white">
+        <div class="col-xs-4">
+            <img class="img-responsive img-thumbnail" src="/Assets/img/about/uncc.jpg" alt="">
+        </div>
+        <div class="col-xs-8">
+            <div class="about-heading">
+                <h3>🏠 UNIVERSITY OF NORTH CAROLINA AT CHARLOTTE <span style="font-weight: normal">(<i>Charlotte, NC</i>)</span></h3>
+                <h4>📅 AUGUST 2011 - DECEMBER 2015</h4>
+                <h4>🐱‍👓<i>Closing the books at UNCC</i></h4>
+            </div>
+            <div class="about-body">
+                <p>
+                    Came to UNC Charlotte with with no clue where I belong. After the first semester, I felt that connection
+                    and interest with coding using C++, so I persued it. Then a year later, I got accepted into
+                    the William States Lee College of Engineering at UNC Charlotte. Then the folowing semester, I applied for
+                    a dual degree in Computer and Electrial Engineering. This pushed me to challenge myself and my limitations.
+                    After 4 years of enduring studious nights at the library, and work on the weekends,
+                    I am proud to say that I've graduated UNC Charlotte with a Bachelor's Degree of Science in Computer Engineering and
+                    a Bachelor's  Degree of Science in Electrical Engineering, which are both ABET accredited.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row row-white">
+        <div class="col-xs-4">
+            <img class="img-responsive img-thumbnail" src="~/Assets/img/about/sff.jpg" alt="">
+        </div>
+        <div class="col-xs-8">
+            <div class="about-heading">
+                <h3>🏠 SUMMER FRESH FLOWERS FARM <span style="font-weight: normal">(<i>Newton, NC</i>)</span></h3>
+                <h4>📅 AUGUST 2005 - PRESENT DAY</h4>
+                <h4>🐱‍🐉 <i>IT & QUALITY CONTROL</i></h4>
+            </div>
+            <div class="about-body">
+                <p>
+                    After the recession (in 2004), my family and I moved to North Carolina seeking better opportunties.
+                    We started our own family business of growing and sellings flowers at the Farmers Market.
+                    We arranage and supply any floral arrangements varying from house warming/holiday events to weddings.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    @*<div class="row">
+            <div class="col-lg-12">
+                <ul class="timeline">
+                    <li>
+                        <div class="timeline-image">
+                            <div id="portfolio">
+                                <div class="portfolio-item">
+                                    <a href="http://www.coderfoundry.com/" target="_blank" class="portfolio-link" data-toggle="modal">
+                                        <!--myModal1-->
+                                        <div class="portfolio-hover img-circle img-responsive">
+                                            <div class="portfolio-hover-content">
+                                                <i class="fa fa-code fa-3x"></i>
+                                            </div>
+                                        </div>
+                                        <img class="img-circle img-responsive" src="/Assets/img/about/cf.jpg" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>MARCH 2016</h4>
+                                <h4 class="subheading">New Journey at Coder Foundry</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p class="text-muted">
+                                    After graduation, my collegues spoke to me about Coder Foundry, a well-reputatable bootcamp
+                                    which offers full-stack .net development. I was very fortunate to get accepted into this
+                                    bootcamp because I did not applied 3 weeks before the course began. Instead, I applied 1 week
+                                    prior to the start date, and normally students would not get accepted at this time.
+                                    Fortunately, there was a student who changed seats from this session, to the next coming up one.
+                                    And it was thanks to Hasim and Andrew that I am here at Coder Foundry today accessing
+                                    an incredible resource of information.
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image">
+                            <div id="portfolio">
+                                <div class="portfolio-item">
+                                    <a href="http://engr.uncc.edu/" target="_blank" class="portfolio-link" data-toggle="modal">
+                                        <!--myModal1-->
+                                        <div class="portfolio-hover img-circle img-responsive">
+                                            <div class="portfolio-hover-content">
+                                                <i class="fa fa-cogs fa-3x"></i>
+                                            </div>
+                                        </div>
+                                        <img class="img-circle img-responsive" src="~/Assets/img/about/uncc.jpg" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>AUGUST 2011 - DECEMBER 2015</h4>
+                                <h4 class="subheading">Closing the books at UNCC</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p class="text-muted">
+                                    Came to UNC Charlotte with with no clue where I belong. After the first semester, I felt that connection
+                                    and interest with coding using C++, so I persued it. Then a year later, I got accepted into
+                                    the William States Lee College of Engineering at UNC Charlotte. Then the folowing semester, I applied for
+                                    a dual degree in Computer and Electrial Engineering. This pushed me to challenge myself and my limitations.
+                                    After 4 years of enduring studious nights at the library, and work on the weekends,
+                                    I am proud to say that I've graduated UNC Charlotte with a Bachelor's Degree of Science in Computer Engineering and
+                                    a Bachelor's  Degree of Science in Electrical Engineering, which are both ABET accredited.
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timeline-image">
+                            <div id="portfolio">
+                                <div class="portfolio-item">
+                                    <a href="http://www.keypersystems.com/" target="_blank" class="portfolio-link" data-toggle="modal">
+                                        <!--myModal1-->
+                                        <div class="portfolio-hover img-circle img-responsive">
+                                            <div class="portfolio-hover-content">
+                                                <i class="fa fa-cog fa-spin fa-3x"></i>
+                                            </div>
+                                        </div>
+                                        <img class="img-circle img-responsive" src="~/Assets/img/about/Logo2016.jpg" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>OCTOBER 2015 - DECEMBER 2015</h4>
+                                <h4 class="subheading">Computer Internship at KEYper Systems</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p class="text-muted">
+                                    Joined the KEYper Team to help innonvate and improve key asset security.
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image">
+                            <div id="portfolio">
+                                <div class="portfolio-item">
+                                    <a href="https://www.facebook.com/Summer-Fresh-Flower-Farm-814108315370232/" target="_blank" class="portfolio-link" data-toggle="modal">
+                                        <!--myModal1-->
+                                        <div class="portfolio-hover img-circle img-responsive">
+                                            <div class="portfolio-hover-content">
+                                                <i class="fa fa-leaf fa-3x"></i>
+                                            </div>
+                                        </div>
+                                        <img class="img-circle img-responsive" src="~/Assets/img/about/sff.jpg" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>AUGUST 2005 - PRESENT DAY</h4>
+                                <h4 class="subheading">SUMMER FRESH FLOWERS FARM</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p class="text-muted">
+                                    After a recession, my family and I moved to North Carolina seeking better opportunties.
+                                    We started our own family business of growing and sellings flowers at the Farmers Market.
+                                    We assist in any floral arrangements varying from house warming events to wedding.
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image">
+                            <div id="portfolio">
+                                <div class="portfolio-item">
+                                    <a href="~/Home/Contact" target="_blank" class="portfolio-link" data-toggle="modal">
+                                        <!--myModal1-->
+                                        <div class="portfolio-hover img-circle img-responsive" style="color: #fff; margin: 40px 0 0 10px; ">
+                                            <div class="portfolio-hover-content">
+                                                <i class="fa fa-paper-plane-o fa-3x" style="color :#222; margin: 0px 35px 20px 0px;"></i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <h4>Be A Part<br>Of My<br>Timeline!</h4>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>*@
 </body>
+
+@section Scripts{
+	<script typed="text/javascript">
+		$(function () {
+			$("#typed").typed({
+				strings: ["The Evil Genius", "Web Developer",
+				"Computer Engineer", "Electrical Engineer",
+				"Florist", "Photographer Enthusiast"],
+				typeSpeed: 50,
+				backspeed: 25,
+				loop: true
+			});
+		});
+	</script>
+}

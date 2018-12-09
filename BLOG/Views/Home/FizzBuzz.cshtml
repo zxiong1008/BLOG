@@ -1,22 +1,56 @@
 ﻿@model BLOG.Models.FizzBuzzViewModel
+<style>
+	body {
+		background-color: transparent;
+	}
+</style>
+<div class="row row-black">
+	<div class="intro-text">
+		<div class="intro-heading">
+			C#: FizzBuzz
+		</div>
+	</div>
+</div>
+<div class="row row-white">
+	<p>
+		For each number that is a multiple of the first number input by the user,
+		print <mark>"Fizz"</mark> instead of the number.
+		For each number that is a multiple of the second number input by the user,
+		print <mark>"Buzz"</mark> instead of the number.
+		For numbers that are multiples of both numbers,
+		print <mark>"FizzBuzz"</mark> instead of the number.
+	</p>
+	<br />
+	<p>
+		For example: Use <mark><b>5 & 10</b></mark>
+	<br />
+	<br />
+	FizzResult:
+	<br />
+	1 2 3 4 <mark>Fizz</mark> 6 7 8 9 <mark>FizzBuzz</mark> 11 12 13 14 <mark>Fizz</mark> 16 17 18 19 <mark>FizzBuzz</mark>
+	21 22 23 24 <mark>Fizz</mark> 26 27 28 29 <mark>FizzBuzz</mark> 31 32 33 34 <mark>Fizz</mark> 36 37 38 39
+	<mark>FizzBuzz</mark> 41 42 43 44 <mark>Fizz</mark> 46 47 48 49 <mark>FizzBuzz</mark> 51 52 53 54 <mark>Fizz</mark> 56 57 58 59
+	<mark>FizzBuzz</mark> 61 62 63 64 <mark>Fizz</mark> 66 67 68 69 <mark>FizzBuzz</mark> 71 72 73 74 <mark>Fizz</mark> 76 77 78 79
+	<mark>FizzBuzz</mark> 81 82 83 84 <mark>Fizz</mark> 86 87 88 89 <mark>FizzBuzz</mark> 91 92 93 94 <mark>Fizz</mark> 96 97 98 99 <mark>FizzBuzz</mark>
+</p>
+	@using (Html.BeginForm())
+	{
+		<p>FizzBuzz Input:</p>
+		<div class="col-md-12" style="padding-left: 0;">
+			<input name="fizz" type="number"/>
+			<input name="buzz" type="number"/>
+			<input type="submit" value="Submit Numbers" />
+		</div>
+	}
+	<br>
+	@if (Model != null)
+	{
+		<div class="col-md-12" style="padding-left: 0;">
+			@*Html.Raw is good for blog*@
+			<p>FizzResult: @Html.Raw(Model.result) </p>
+		</div>
+	}
 
-    @using (Html.BeginForm())
-    {
-        <div class="row">
-            <input name="fizz" type="number" />
-            <input name="buzz" type="number" />
-        </div>
-        
 
-        <div class="row">
-            <input type="submit" value="Submit Numbers" />
-        </div>
-    }
-
-    @if (Model != null)
-    {
-        <div class="row">
-            @*Html.Raw is good for blog*@
-            <p>FizzResult: @Html.Raw(Model.result) </p>
-        </div>
-    }
+</div>
+   

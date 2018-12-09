@@ -1,19 +1,38 @@
 ﻿@model BLOG.Models.PalindromeViewModels
+<style>
+	body {
+		background-color: transparent;
+	}
+</style>
+<div class="row row-black">
+	<div class="intro-text">
+		<div class="intro-heading">
+			C#: Palindrome
+		</div>
+	</div>
+</div>
+<div class="row row-white">
+	<p>A statement which is equivalent when writtened backwards.</p>
+	<br />
+	For example: Try <mark><b>Radar</b></mark>
+	<br /><br />
+	Result: 
+	Palindrome message: <mark>"Radar"</mark> is a palindrome.
+	@using (Html.BeginForm())
+	{
+		<div class="col-md-12" style="padding-left: 0;">
+			<input name="inputWord" type="text" />
+			<input type="submit" value="Submit Palidrome" />
+		</div>
+	}
 
-    @using (Html.BeginForm())
-    {
-        <div class="row">
-            <input name="inputWord" type="text" />
-        </div>
-        <div class="row">
-            <input type="submit" value="Submit Palidrome" />
-        </div>
-    }
+	@if (Model != null)
+	{
+		<div class="col-md-12">
+			@*Html.Raw is good for blog*@
+			<p>Palindrome message: @Html.Raw(Model.outputWord)</p>
+		</div>
+	}
 
-    @if (Model != null)
-    {
-        <div class="row">
-            @*Html.Raw is good for blog*@
-            <p>Palindrome message: @Model.outputWord</p>
-        </div>
-    }
+
+</div>

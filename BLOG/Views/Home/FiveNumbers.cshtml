@@ -5,29 +5,46 @@
 
 @* Set up a form in this page to submit data to the server
     strictly in the open/close braces. (ie. Input boxes)  *@
-    @using (Html.BeginForm())
-    {
-        <div class="row">
-            @* access razor when you use HTML such as div, HTML -> RAZOR -> HTML *@
-            @for (int i = 0; i < 5; i++)
-            {
-                //model binding, taking data/attributes from model,
-                //and binding it to the HTML elements in a form
-                <input name="fivenums" type="number" />
-            }
-        </div>
-        <div class="row">
-            <input type="submit" value="Submit Numbers" />
-        </div>
-    }
+<style>
+	body {
+		background-color: transparent;
+	}
+</style>
+<div class="row row-black">
+	<div class="intro-text">
+		<div class="intro-heading">
+			C#: 5 Series
+		</div>
+	</div>
+</div>
+<div class="row row-white">
+	<p>Find the <mark>min, max, average, sum, and/or product</mark> of 5 numbers</p>
+		@using (Html.BeginForm())
+		{
+			<div class="col-md-12" style="padding-left: 0;">
 
-    @if (Model != null)
-    {
-        <div>
-            <p>Min Result:  @Model.MinResult</p>
-            <p>Max Result:  @Model.MaxResult</p>
-            <p>Avg Result:  @Model.AvgResult</p>
-            <p>Sum Result:  @Model.SumResult</p>
-            <p>Prod Result:  @Model.ProdResult</p>
-        </div>
-    }
+				@* access razor when you use HTML such as div, HTML -> RAZOR -> HTML *@
+				@for (int i = 0; i < 5; i++)
+				{
+					//model binding, taking data/attributes from model,
+					//and binding it to the HTML elements in a form
+					<input name="fivenums" type="number" value="@(i+1)"/>
+				}
+			</div>
+			<div class="col-md-12" style="padding-left: 0;">
+				<input type="submit" value="Submit Numbers" />
+			</div>
+		}
+
+		@if (Model != null)
+		{
+			<div>
+				<p>Min Result:  @Model.MinResult</p>
+				<p>Max Result:  @Model.MaxResult</p>
+				<p>Avg Result:  @Model.AvgResult</p>
+				<p>Sum Result:  @Model.SumResult</p>
+				<p>Prod Result:  @Model.ProdResult</p>
+			</div>
+		}
+	</div>
+ 

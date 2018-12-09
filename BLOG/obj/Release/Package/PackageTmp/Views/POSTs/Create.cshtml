@@ -1,91 +1,118 @@
 ﻿@model BLOG.Models.POST
 
 @{
-    ViewBag.Title = "Create";
+	ViewBag.Title = "Create";
 }
-
+<style>
+	body {
+		background-color: transparent;
+	}
+</style>
 <h2>Create</h2>
 @*multipart form - something beyong the form*@
 @using (Html.BeginForm("Create", "POSTs", FormMethod.Post, new { enctype = "Multipart/form-data" }))
 {
-    @Html.AntiForgeryToken()
+	@Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <h4>POST</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+	<div class="form-horizontal">
+		<div class="row row-black">
+			<div class="intro-text">
+				<div class="intro-heading">Write A Blog</div>
+			</div>
+		</div>
+		<div class="row row-white">
 
-        @*<div class="form-group">
-            @Html.LabelFor(model => model.CREATED, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CREATED, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CREATED, "", new { @class = "text-danger" })
-            </div>
-        </div>*@
+			@Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-        @*<div class="form-group">
-                @Html.LabelFor(model => model.UPDATED, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.UPDATED, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.UPDATED, "", new { @class = "text-danger" })
-                </div>
-            </div>*@
+			@*<div class="form-group">
+					@Html.LabelFor(model => model.CREATED, htmlAttributes: new { @class = "control-label col-md-2" })
+					<div class="col-md-10">
+						@Html.EditorFor(model => model.CREATED, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(model => model.CREATED, "", new { @class = "text-danger" })
+					</div>
+				</div>*@
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.TITLE, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.TITLE, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.TITLE, "", new { @class = "text-danger" })
-            </div>
-        </div>
+			@*<div class="form-group">
+					@Html.LabelFor(model => model.UPDATED, htmlAttributes: new { @class = "control-label col-md-2" })
+					<div class="col-md-10">
+						@Html.EditorFor(model => model.UPDATED, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(model => model.UPDATED, "", new { @class = "text-danger" })
+					</div>
+				</div>*@
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.BODY, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.TextAreaFor(model => model.BODY, 10, 0, htmlAttributes: new { @class = "form-control", id = "textarea" })
-                @Html.ValidationMessageFor(model => model.BODY, "", new { @class = "text-danger" })
-            </div>
-        </div>
+			<div class="form-group">
+				@Html.LabelFor(model => model.TITLE, htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@Html.EditorFor(model => model.TITLE, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.TITLE, "", new { @class = "text-danger" })
+				</div>
+			</div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.MEDIA, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <input name="image" type="file" class="form-control" id="fileUpload" />
-                @*@Html.EditorFor(model => model.MEDIA, new { htmlAttributes = new { @class = "form-control" } })*@
-                @Html.ValidationMessageFor(model => model.MEDIA, "", new { @class = "text-danger" })
-            </div>
-        </div>
+			<div class="form-group">
+				@Html.LabelFor(model => model.BODY, htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@Html.TextAreaFor(model => model.BODY, 10, 0, htmlAttributes: new { @class = "form-control", id = "textarea" })
+					@Html.ValidationMessageFor(model => model.BODY, "", new { @class = "text-danger" })
+				</div>
+			</div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.PUBLISH, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-sm-10 col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.PUBLISH)
-                    @Html.ValidationMessageFor(model => model.PUBLISH, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
+			<div class="form-group">
+				@Html.LabelFor(model => model.MEDIA, htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					<input name="image" type="file" class="form-control" id="fileUpload" />
+					@*@Html.EditorFor(model => model.MEDIA, new { htmlAttributes = new { @class = "form-control" } })*@
+					@Html.ValidationMessageFor(model => model.MEDIA, "", new { @class = "text-danger" })
+				</div>
+			</div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
+			<div class="form-group">
+				@Html.LabelFor(model => model.PUBLISH, htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-sm-10 col-md-10">
+					<div class="checkbox">
+						@Html.EditorFor(model => model.PUBLISH)
+						@Html.ValidationMessageFor(model => model.PUBLISH, "", new { @class = "text-danger" })
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-md-6 pull-left">
+					<div class="btn btn-default">
+						@Html.ActionLink("Back to List", "Index")
+					</div>
+				</div>
+				<div class="col-md-6 pull-right">
+					<input type="submit" value="Create" class="btn btn-primary pull-right" />
+				</div>
+			</div>
+		</div>
+	</div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-<br /><br /><br />
 
 @section scripts{
-    <script type="text/javascript">
-        tinymce.init({
-            selector: "textarea",
-            toolbar: "insertfile undo redo | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link",
-            statusbar: false,
-            menubar: false
-        });
-    </script>
+	<script type="text/javascript">
+		tinymce.init({
+			selector: 'textarea',
+			height: 300,
+			theme: 'modern',
+			plugins: [
+              'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+              'searchreplace wordcount visualblocks visualchars code fullscreen',
+              'insertdatetime media nonbreaking save table contextmenu directionality',
+              'emoticons template paste textcolor colorpicker textpattern imagetools'
+			],
+			toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent',
+			toolbar2: 'print preview media | link image | forecolor backcolor emoticons',
+			image_advtab: true,
+			templates: [
+              { title: 'Test template 1', content: 'Test 1' },
+              { title: 'Test template 2', content: 'Test 2' }
+			],
+			content_css: [
+              '//fast.fonts.net/cssapi/e6dc9b99-64fe-4292-ad98-6974f93cd2a2.css',
+              '//www.tinymce.com/css/codepen.min.css'
+			]
+		});
+	</script>
 }

@@ -14,7 +14,7 @@ namespace BLOG.Models
         public string TITLE { get; set; }
         [AllowHtml]
         public string BODY { get; set;  }
-        public string MEDIA { get; set; }
+        public byte[] MEDIA { get; set; }
         public bool PUBLISH { get; set; }
 
         //generic object - big pile of anything.

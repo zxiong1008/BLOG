@@ -58,9 +58,9 @@ namespace BLOG
             //   consumerSecret: "");
 
             app.UseFacebookAuthentication(
-                appId: "428237764232853",
-                appSecret: "279ffbce3f634457eda42e053a6f89be"
-				);
+                appId: "859228767511414",
+                appSecret: "8f35735d41bdcc3ea3c651a258dc1271"
+                );
 
             app.UseLinkedInAuthentication(
                 clientId: "77r8d0vu2xlw8v",

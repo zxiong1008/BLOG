@@ -136,14 +136,14 @@ $(document).ready(function () {
         fallbackToLetter: true,
 
         /*	jQuery-selector for the element to keep and put after the ellipsis. */
-        after: null,
+        after: "a.readmore",
 
         /*	Whether to update the ellipsis: true/'window' */
         watch: false,
 
         /*	Optionally set a max-height, can be a number or function.
             If null, the height will be measured. */
-        height: 50,
+        height: 1000,
 
         /*	Deviation for the height-option. */
         tolerance: 0,

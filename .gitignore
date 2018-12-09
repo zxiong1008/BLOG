@@ -49,3 +49,11 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+/.vs/
+/BLOG/obj/
+/BLOG/Web.config
+/BLOG/Web.debug.config
+/BLOG/Web.release.config
+/BLOG/Private.config
+/BLOG/bin/
+/BLOG/Properties/PublishProfiles/

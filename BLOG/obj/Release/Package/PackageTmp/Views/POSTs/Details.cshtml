@@ -1,228 +1,105 @@
 ﻿@model BLOG.Models.POST
 
+<style>
+	body {
+		background-color: transparent;
+	}
+</style>
 
-@*@@{
-            ViewBag.Title = "Details";
-        }
+<div class="row row-black">
+	<div class="intro-text">
+		<div class="intro-heading">
+			@Model.TITLE
+		</div>
+	</div>
+	<div class="text-white">
+		@Model.CREATED.ToString("dddd MMMM dd, yyyy hh:mm tt")
+		@if (User.IsInRole("Admin"))
+			{
+			<a href="@Url.Action("Delete", "POSTs", new  {id =Model.ID })" class="btn btn-danger pull-right"><i class="fa fa-close"></i></a>
+			<a href="@Url.Action("Edit", "POSTs", new  {id =Model.ID })" class="btn btn-warning pull-right"><i class="fa fa-edit"></i></a>
+			}
+	</div>
 
-    <h2>Details</h2>
+</div>
 
-    <div>
-        <h4>POST</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.CREATED)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.CREATED)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.UPDATED)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.UPDATED)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.TITLE)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.TITLE)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.BODY)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.BODY)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.MEDIA)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.MEDIA)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.PUBLISH)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.PUBLISH)
-            </dd>
-
-        </dl>
+<!-- Start Content -->
+<!-- Start Single Post (Gallery Slider) -->
+<div class="row row-white">
+	@if (Model.MEDIA != null)
+    {
+        <div class="col-md-4">
+            <img type="image" src="@Html.Raw("data:image/png;base64," + Convert.ToBase64String(Model.MEDIA))" style="width: 100%" />
+        @*<img alt="BLOG PHOTO" src="@Url.Content(Model.MEDIA)" id="blog-photo" width="100%" />*@
     </div>
-    <p>
-        @if (User.IsInRole("Admin"))
-        {
-        <div class="row" style="text-align: right;">
-            <h4>@Html.ActionLink("Edit", "Edit", new { id = Model.ID })</h4>
-        </div>
+	}
+	else
+	{
+		<div class="col-md-4">
+			<img alt="NO PHOTO" src="https://media.giphy.com/media/10QeIV66dUxAgU/giphy.gif" width="100%" />
+		</div>
 
-        }
-        <h4>@Html.ActionLink("Back to List", "Index")</h4>
-    </p>*@
+	}
 
-<!doctype html>
+	<!-- End Single Post (Gallery) -->
+	<!-- Start Single Post Content -->
 
-<html lang="en">
+	<div class="col-md-8">
+		@Html.Raw(Model.BODY)
+	</div>
+</div>
+<!-- End Single Post Content -->
+<!-- End Single Post Area -->
+<!-- Start Comment Area -->
+@* *******************comment section******************* *@
+<div class="row row-white">
+	<h3>Comment Box</h3>
+	@using (Html.BeginForm("Create", "COMMENTs", FormMethod.Post))
+	{
+		@Html.AntiForgeryToken()
+		<input type="hidden" name="POSTID" value="@Model.ID" />
+		<div class="form-group">
+			<label for="comment-new_textarea" class="sr-only">Share your thoughts!</label>
+			<textarea class="form-control" rows="2" id="body" name="body" placeholder="Share your thoughts!"></textarea>
+		</div>
+		<button type="submit" class="btn btn-primary pull-right">Add Comment <i class="fa fa-plus"></i></button>
+		//anything inside a form, with the input tag, will be submitted to the form.
+	}
+</div>
+@* ------------comment submit box------------ *@
 
-<head>
+@*----------comment form box-----------*@
+@foreach (var comm in Model.Comments)
+{
+	<div class="row row-white">
+		<div class="col-sm-3">
+			<div>
+				@{
+					string User_name = @comm.AUTHOR?.FirstName + " " + @comm.AUTHOR?.LastName;
+					<h2>@User_name</h2>
+					@comm.AUTHOR.MediaURL;
+				}
+			</div>
+		</div>
+		<div class="col-sm-9">
+			@Html.Raw(comm.BODY)
+			<hr />
+			<div>
+				@if (User.IsInRole("Admin"))
+				{
+					using (Html.BeginForm("Delete", "Comments", FormMethod.Post))
+					{
+						@Html.AntiForgeryToken()
+						<input type="hidden" name="id" value="@comm.ID" />
+						<button type="submit" class="btn btn-danger btn-xs pull-right">
 
-
-</head>
-
-<body>
-
-    <!-- Container -->
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <h3 class="pull-right">
-                    <a href=@("/Home/")><i class="fa fa-home"></i>Home</a> /
-                    <a href=@("/Posts/Index/"+ Model.ID)><i class="fa fa-comments"></i>Blog</a> /
-                    <a href="#">@Model.TITLE</a>
-                </h3>
-            </div>
-        </div>
-        <div class="row" id="blog">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="row" id="blog-title-detail">
-                    <div class="col-sm-12" style="text-align: center;">
-                        <h1>@Model.TITLE</h1>
-                            @Model.CREATED.ToString("D")
-                        @if (User.IsInRole("Admin"))
-                        {
-                            <a href="@Url.Action("Edit", "POSTs", new  {id =Model.ID })" class="btn btn-default pull-right"><i class="fa fa-edit"></i></a>
-                            <a href="@Url.Action("Delete", "POSTs", new  {id =Model.ID })" class="btn btn-default pull-right"><i class="fa fa-close"></i></a>
-                        }
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <!-- Start Content -->
-                <div class="row">
-                    <div class="col-md-12" style="text-align: center;">
-                        <br />
-                        <!-- Start Single Post (Gallery Slider) -->
-                        @if (Model.MEDIA != null)
-                        {
-                            <img alt="BLOG PHOTO" src="@Url.Content(Model.MEDIA)" width="100%"/>
-                        }
-                        else
-                        {
-                            <img alt="NO PHOTO" src="https://media.giphy.com/media/10QeIV66dUxAgU/giphy.gif" width="100%"/>
-                        }
-                        <!-- End Single Post (Gallery) -->
-                        <!-- Start Single Post Content -->
-                    </div>
-                    <div class="col-md-12">
-                        <br />
-                        <div class="row" id="blog-body-detail">
-                            <div class="col-md-12" >
-                                @Html.Raw(Model.BODY)
-                            </div>
-                        </div>
-                        <!-- End Single Post Content -->
-                    </div>
-                    <!-- End Single Post Area -->
-                </div>
-            </div>
-            <!-- Start Comment Area -->
-        </div>
-
-        @* *******************comment section******************* *@
-        <div class="container">
-            <hr />
-            <h2 class="comments-title">Comments</h2>
-            @* ------------comment submit box------------ *@
-            @using (Html.BeginForm("Create", "COMMENTs", FormMethod.Post))
-            {
-                @Html.AntiForgeryToken()
-                <input type="hidden" name="POSTID" value="@Model.ID" />
-                    <div class="form-group">
-                        <label for="comment-new_textarea" class="sr-only">Enter your comment</label>
-                        <textarea class="form-control" rows="2" id="body" name="body" placeholder="Enter your comment"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Comment</button>
-                //anything inside a form, with the input tag, will be submitted to the form.
-            }
-            <hr />
-            @*----------comment form box-----------*@
-            @foreach (var comm in Model.Comments)
-            {
-                <div class="row" id="blog-comments-detail" >
-                    <div class="col-sm-3" >
-                        <div class="row" id="blog-comments-author">
-                            <div class="col-sm-12">
-                                @{
-                                    string User_name = @comm.AUTHOR?.FirstName + " " + @comm.AUTHOR?.LastName;
-                                    <h3>@User_name</h3>
-                                    @comm.AUTHOR.MediaURL;
-                                }
-                            </div>
-                            <div class="col-sm-12">
-                                <i class="fa fa-clock-o"></i>@comm.CREATED.ToString("D")
-                            </div>
-                            <div class="col-sm-12">
-                                @if (User.IsInRole("Admin"))
-                                {
-                                    using (Html.BeginForm("Delete", "Comments", FormMethod.Post))
-                                    {
-                                        @Html.AntiForgeryToken()
-                                        <input type="hidden" name="id" value="@comm.ID" />
-                                        <button type="submit" class="btn btn-default">
-                                            <i class="fa fa-times"></i>
-                                            Remove
-                                        </button>
-                                    }
-                                }
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-9" id="blog-comments-body">
-                        @Html.Raw(comm.BODY)
-                    </div>
-                </div><br/>
-            }   <!-- End Comment Area -->
-        </div>      <!-- Tags Widget -->
-
-        @*<div class="widget widget-tags">
-                <h4>Tags <span class="head-line"></span></h4>
-                <div class="tagcloud">
-                    <a href="#">Portfolio</a>
-                    <a href="#">Theme</a>
-                    <a href="#">Mobile</a>
-                    <a href="#">Design</a>
-                    <a href="#">Wordpress</a>
-                    <a href="#">Jquery</a>
-                    <a href="#">CSS</a>
-                    <a href="#">Modern</a>
-                    <a href="#">Theme</a>
-                    <a href="#">Icons</a>
-                    <a href="#">Google</a>
-                </div>
-            </div>*@
-
-    </div>
-    <!--End sidebar-->
-    @*</div>
-
-        </div>
-        </div>*@
-    <!-- End content -->
-    @*
-        <script type="text/javascript" src="/MAssets/js/script.js"></script>*@
-
-</body>
-
-</html>
+							Remove <i class="fa fa-times"></i>
+						</button>
+					}
+				}
+				<i class="fa fa-pencil"></i> @comm.CREATED.ToString("MMMM dd, yyyy hh:mm tt")
+			</div>
+		</div>
+	</div>
+					}   <!-- End Comment Area -->
+<!-- Tags Widget -->

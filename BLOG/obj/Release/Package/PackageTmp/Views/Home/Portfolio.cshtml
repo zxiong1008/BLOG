@@ -1,224 +1,147 @@
-﻿
+﻿<style>
+	body {
+		background-color: transparent;
+	}
+</style>
+
+<div class="row row-black">
+	<div class="intro-text">
+		<div class="col-md-8">
+			<div class="intro-heading"><i class="fa fa-folder-open"></i> Portfolio</div>
+		</div>
+		<div class="col-md-4">
+			<div class="row">
+				<div class="col-md-12">
+					<a href="http://LinkedIn.com/in/zengxiong/" target="_blank" class="btn btn-linkedin btn-medium btn-portfolio" id="linkedin-icon"><i class="fa fa-linkedin-square"></i> | My LinkedIn</a>
+				</div>
+				<div class="col-md-12">
+					<a href="http://GitHub.com/zxiong1008/" target="_blank" class="btn btn-github btn-medium btn-portfolio" id="github-icon"><i class="fa fa-github-square"></i> | My GitHub</a>
+				</div>
+				<div class="col-md-12">
+					<a href="http://zxiong-bugtracker.azurewebsites.net/" target="_blank" class="btn btn-default btn-medium btn-portfolio" id="bugtrack-icon"><i class="fa fa-bug" style="color:yellow; text-shadow: 0px 0px 5px #333"></i> | My BugTracker App</a>
+				</div>
+				<div class="col-md-12">
+					<a href="http://zxiong-budget.azurewebsites.net/" target="_blank" class="btn btn-default btn-medium btn-portfolio" id="budget-icon"><i class="fa fa-credit-card" style="color:lightgreen;"></i> | My Budget Application</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row row-white">
+	<div class="col-md-12">
+		<h2>Javascripts</h2>
+	</div>
+	<div class="col-xs-6 col-sm-6 col-md-3">
+		<a href="#myModal1" class="portfolio-link" data-toggle="modal">
+			<!--myModal1-->
+			<img src="~/Assets/img/portfolio/Icon_Calculator.jpg" class="img-responsive" alt="">
+		</a>
+		<h3>5 SERIES</h3>
+	</div>
+	<div class="col-xs-6 col-sm-6 col-md-3">
+		<a href="#myModal2" class="portfolio-link" data-toggle="modal">
+			<!--myModal2-->
+			<img src="~/Assets/img/portfolio/n.jpg" class="img-responsive" alt="">
+		</a>
+		<h3>EASY FACTORIAL</h3>
+	</div>
+	<div class="col-xs-6 col-sm-6 col-md-3">
+		<a href="#myModal3" class="portfolio-link" data-toggle="modal">
+			<!--myModal3-->
+			<img src="~/Assets/img/portfolio/PIC-fizzbuzz.png" class="img-responsive" alt="">
+		</a>
+		<h3>FIZZBUZZ</h3>
+	</div>
+	<div class="col-xs-6 col-sm-6 col-md-3">
+		<a href="#myModal4" class="portfolio-link" data-toggle="modal">
+			<!--myModal4-->
+			<img src="~/Assets/img/portfolio/pal.png" class="img-responsive" alt="">
+		</a>
+		<h3>PALINDROME</h3>
+	</div>
+</div>
 <section id="portfolio">
-    <div class="row">
-        <div class="col-lg-12 text-center">
-            <h1 class="section-heading"><i class="fa fa-folder-open"></i> Portfolio</h1>
-            <a href="http://LinkedIn.com/in/zengxiong/" target="_blank" class="btn btn-linkedin btn-lg" id="linkedin-icon" style="width:80%"><i class="fa fa-linkedin-square"></i> | Check Out my LinkedIn</a>
-            <a href="http://GitHub.com/zxiong1008/" target="_blank" class="btn btn-github btn-lg" id="github-icon" style="width:80%"><i class="fa fa-github-square"></i> | Check Out My GitHub Repository</a>
-            <a href="http://zxiong-bugtracker.azurewebsites.net/" target="_blank" class="btn btn-default btn-lg" id="bugtrack-icon" style="width:80%"><i class="fa fa-bug" style="color:yellow; text-shadow: 0px 0px 5px #333"></i> | Check Out my BugTracker Application</a>
-            <a href="http://zxiong-budget.azurewebsites.net/" target="_blank" class="btn btn-default btn-lg" id="budget-icon" style="width:80%"><i class="fa fa-credit-card" style="color:orangered;"></i> | Check Out my Budget Application</a>
-
-            <h2 class="section-subheading text-muted">Check Out My Javascripts!</h2>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4 col-sm-6 portfolio-item">
-            <a href="#myModal1" class="portfolio-link" data-toggle="modal">
-                <!--myModal1-->
-                <div class="portfolio-hover">
-                    <div class="portfolio-hover-content">
-                        <i class="fa fa-toggle-on fa-3x"></i>
-                    </div>
-                </div>
-                <img src="~/Assets/img/portfolio/Icon_Calculator.jpg" class="img-responsive" alt="">
-            </a>
-            <div class="portfolio-caption">
-                <h4>5 SERIES</h4>
-                <p class="text-muted">MAX/MIN/MEAN/SUM/PRODUCT</p>
-            </div>
-        </div>
-        <div class="col-md-4 col-sm-6 portfolio-item">
-            <a href="#myModal2" class="portfolio-link" data-toggle="modal">
-                <!--myModal2-->
-                <div class="portfolio-hover">
-                    <div class="portfolio-hover-content">
-                        <i class="fa fa-toggle-on fa-3x"></i>
-                    </div>
-                </div>
-                <img src="~/Assets/img/portfolio/n.jpg" class="img-responsive" alt="">
-            </a>
-            <div class="portfolio-caption">
-                <h4>EASY FACTORIAL</h4>
-                <p class="text-muted">N * (N-1) * (N-2) * ... 1</p>
-            </div>
-        </div>
-        <div class="col-md-4 col-sm-6 portfolio-item">
-            <a href="#myModal3" class="portfolio-link" data-toggle="modal">
-                <!--myModal3-->
-                <div class="portfolio-hover">
-                    <div class="portfolio-hover-content">
-                        <i class="fa fa-toggle-on fa-3x"></i>
-                    </div>
-                </div>
-                <img src="~/Assets/img/portfolio/PIC-fizzbuzz.png" class="img-responsive" alt="">
-            </a>
-            <div class="portfolio-caption">
-                <h4>FIZZBUZZ</h4>
-                <p class="text-muted">FIZZ/BUZZ/FIZZBUZZ</p>
-            </div>
-        </div>
-        <div class="col-md-4 col-sm-6 portfolio-item">
-            <a href="#myModal4" class="portfolio-link" data-toggle="modal">
-                <!--myModal4-->
-                <div class="portfolio-hover">
-                    <div class="portfolio-hover-content">
-                        <i class="fa fa-toggle-on fa-3x"></i>
-                    </div>
-                </div>
-                <img src="~/Assets/img/portfolio/pal.png" class="img-responsive" alt="">
-            </a>
-            <div class="portfolio-caption">
-                <h4>PALINDROME</h4>
-                <p class="text-muted">Radar <=> radaR</p>
-            </div>
-        </div>
-        <div class="col-md-4 col-sm-6 portfolio-item">
-            <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-                <div class="portfolio-hover">
-                    <div class="portfolio-hover-content">
-                        <i class="fa fa-toggle-on fa-3x"></i>
-                    </div>
-                </div>
-                <img src="~/Assets/img/portfolio/escape.png" class="img-responsive" alt="">
-            </a>
-            <div class="portfolio-caption">
-                <h4>[EMPTY PROJECT]</h4>
-                <p class="text-muted">[EMPTY]</p>
-            </div>
-        </div>
-        <div class="col-md-4 col-sm-6 portfolio-item">
-            <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                <div class="portfolio-hover">
-                    <div class="portfolio-hover-content">
-                        <i class="fa fa-toggle-on fa-3x"></i>
-                    </div>
-                </div>
-                <img src="~/Assets/img/portfolio/dreams.png" class="img-responsive" alt="">
-            </a>
-            <div class="portfolio-caption">
-                <h4>[EMPTY PROJECT]</h4>
-                <p class="text-muted">[EMPTY]</p>
-            </div>
-
-        </div>
-
-
-
-        @*easier to use for parameters*@
-        @*use Html.ActionLink() to connect the html page to the controller by using the form
-            @Html.ActionLink("[button string name]", "[ActionResult name]", "Folder Value", null, new { @class = "[html attributes]" } )*@
-
-
-        <br /><br />
-        @*html equivalent*@
-        @*  original link, we take out the "/Views" since we are already in the views, we just need to access Home
-            in addition, take out the .cshtml extension since we are accessing using the controller.
-            We are not mapping, we are mapping to the controller and it's action name
-            <a href="~/Views/Home/Factorial.cshtml">~/Views/Home/Factorial.cshtml</a> *@
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2 class="section-subheading text-muted">Check Out My C#!</h2>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-6 col-md-3">
-                <h2>5 Series</h2>
-                <p>Find the min/max/avg/sum/product of 5 numbers.</p>
-            </div>
-            <div class="col-sm-6 col-md-3">
-                <h2>Factorial</h2>
-                <p>Obtain the factorial of a number (ie. n!).</p>
-            </div>
-            <div class="col-sm-6 col-md-3">
-                <h2>FizzBuzz</h2>
-                <p>
-                    For each number that is a multiple of the first number input by the user,
-                    print "Fizz" instead of the number.
-                    For each number that is a multiple of the second number input by the user,
-                    print "Buzz" instead of the number.
-                    For numbers that are multiples of both numbers,
-                    print "FizzBuzz" instead of the number.
-                </p>
-            </div>
-            <div class="col-sm-6 col-md-3">
-                <h2>Palindrome</h2>
-                <p>A statement which is equivalent when writtened backwards.</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">@Html.ActionLink("Get 5 Series", "FiveNumbers", "Home", null, new { @class = "btn btn-primary" })</div>
-            <div class="col-md-3">@Html.ActionLink("Get Factorial", "Factorial", "Home", null, new { @class = "btn btn-primary" })</div>
-            <div class="col-md-3">@Html.ActionLink("Get FizzBuzz", "FizzBuzz", "Home", null, new { @class = "btn btn-primary" })</div>
-            <div class="col-md-3">@Html.ActionLink("Get Palindrome", "Palindrome", "Home", null, new { @class = "btn btn-primary" })</div>
-        </div>
-    </div>
+	@*easier to use for parameters*@
+	@*use Html.ActionLink() to connect the html page to the controller by using the form
+		@Html.ActionLink("[button string name]", "[ActionResult name]", "Folder Value", null, new { @class = "[html attributes]" } )*@
+	@*html equivalent*@
+	@*  original link, we take out the "/Views" since we are already in the views, we just need to access Home
+		in addition, take out the .cshtml extension since we are accessing using the controller.
+		We are not mapping, we are mapping to the controller and it's action name
+		<a href="~/Views/Home/Factorial.cshtml">~/Views/Home/Factorial.cshtml</a> *@
+	<div class="row row-white">
+		<div class="col-lg-12">
+			<h2>C#</h2>
+		</div>
+		<div class="col-xs-6 col-md-3">
+			<h3>5 Series</h3>
+			@Html.ActionLink("Get 5 Series", "FiveNumbers", "Home", null, new { @class = "btn btn-primary" })
+		</div>
+		<div class="col-xs-6 col-md-3">
+			<h3>Factorial</h3>
+			@Html.ActionLink("Get Factorial", "Factorial", "Home", null, new { @class = "btn btn-primary" })
+		</div>
+		<div class="col-xs-6 col-md-3">
+			<h3>FizzBuzz</h3>
+			@Html.ActionLink("Get FizzBuzz", "FizzBuzz", "Home", null, new { @class = "btn btn-primary" })
+		</div>
+		<div class="col-xs-6 col-md-3">
+			<h3>Palindrome</h3>
+			@Html.ActionLink("Get Palindrome", "Palindrome", "Home", null, new { @class = "btn btn-primary" })
+		</div>
+	</div>
 </section>
-@*<div class="row">
-        <div class="col-sm-6 col-md-3">
-            <p><a type="button" class="btn btn-primary" href="~/Home/FiveNumbers">5 Series</a></p>
-        </div>
-        <div class="col-sm-6 col-md-3">
-            <p><a type="button" class="btn btn-primary" href="~/Home/Factorial">Factorial</a></p>
-        </div>
-        <div class="col-sm-6 col-md-3">
-            <p><a type="button" class="btn btn-primary" href="~/Home/FizzBuzz">FizzBuzz</a></p>
-        </div>
-        <div class="col-sm-6 col-md-3">
-            <p><a type="button" class="btn btn-primary" href="~/Home/Palindrome">Palindrome</a></p>
-        </div>
-    </div>*@
 
 <!-- Portfolio Modals -->
 <!-- Use the modals below to showcase details about your portfolio projects! -->
 <!-- Portfolio Modal 1 -->
 <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h2 class="modal-title">5 Series</h2>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <!--series description row on modal-->
-                                Write a program that accepts a series of at
-                                least 5 numbers from the user and performs
-                                the following actions:<p />
-                            </div>
-                        </div>
-                        <div class="row col-sm-12">
-                            <!--series list row on modal-->
-                            <ol>
-                                <li>Determine which number is the least</li>
-                                <li>Determine which number is the greatest</li>
-                                <li>Determine the mean of the numbers</li>
-                                <li>Determine the sum of all the numbers</li>
-                                <li>Determine the product of all the numbers</li>
-                            </ol>
-                        </div>
-                        <div class="row col-sm-12">
-                            <!--series input row on modal-->
-                            <input type="number" id="slot1" class="col-xs-2 col-md-2 well well-sm" value="1">
-                            <input type="number" id="slot2" class="col-xs-2 col-md-2 well well-sm" value="2">
-                            <input type="number" id="slot3" class="col-xs-2 col-md-2 well well-sm" value="3">
-                            <input type="number" id="slot4" class="col-xs-2 col-md-2 well well-sm" value="4">
-                            <input type="number" id="slot5" class="col-xs-2 col-md-2 well well-sm" value="5">
-                        </div>
-                        <div class="row col-sm-12">
-                            <p id="series-result1"></p> <!--prints out results-->
-                            <p id="series-result2"></p> <!--prints out results-->
-                            <p id="series-result3"></p> <!--prints out results-->
-                            <p id="series-result4"></p> <!--prints out results-->
-                            <p id="series-result5"></p> <!--prints out results-->
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="row col-sm-12">
-                            <pre class="brush: js" id="modalscroll">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h2 class="modal-title">5 Series</h2>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="row">
+							<div class="col-sm-12">
+								<!--series description row on modal-->
+								Write a program that accepts a series of at
+								least 5 numbers from the user and performs
+								the following actions:<p />
+							</div>
+						</div>
+						<div class="row col-sm-12">
+							<!--series list row on modal-->
+							<ol>
+								<li>Determine which number is the least</li>
+								<li>Determine which number is the greatest</li>
+								<li>Determine the mean of the numbers</li>
+								<li>Determine the sum of all the numbers</li>
+								<li>Determine the product of all the numbers</li>
+							</ol>
+						</div>
+						<div class="row col-sm-12">
+							<!--series input row on modal-->
+							<input type="number" id="slot1" class="col-xs-2 col-md-2 well well-sm" value="1">
+							<input type="number" id="slot2" class="col-xs-2 col-md-2 well well-sm" value="2">
+							<input type="number" id="slot3" class="col-xs-2 col-md-2 well well-sm" value="3">
+							<input type="number" id="slot4" class="col-xs-2 col-md-2 well well-sm" value="4">
+							<input type="number" id="slot5" class="col-xs-2 col-md-2 well well-sm" value="5">
+						</div>
+						<div class="row col-sm-12">
+							<p id="series-result1"></p> <!--prints out results-->
+							<p id="series-result2"></p> <!--prints out results-->
+							<p id="series-result3"></p> <!--prints out results-->
+							<p id="series-result4"></p> <!--prints out results-->
+							<p id="series-result5"></p> <!--prints out results-->
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="row col-sm-12">
+							<pre class="brush: js" id="modalscroll">
                             function GetMax() { //myModal1
                                 var num = Math.max(parseInt($("#slot1").val()),
                                                     parseInt($("#slot2").val()),
@@ -265,52 +188,52 @@
                                 num + "</b> is the product number.");
                             }
                                 </pre>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" onclick="GetMax()" style="float: left;">Max</button>
-                <button type="button" class="btn btn-primary" onclick="GetMin()" style="float: left;">Min</button>
-                <button type="button" class="btn btn-primary" onclick="GetMean()" style="float: left;">Mean</button>
-                <button type="button" class="btn btn-primary" onclick="GetSum()" style="float: left;">Sum</button>
-                <button type="button" class="btn btn-primary" onclick="GetProduct()" style="float: left;">Product</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal" style="float: right;">Close</button>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" onclick="GetMax()" style="float: left;">Max</button>
+				<button type="button" class="btn btn-primary" onclick="GetMin()" style="float: left;">Min</button>
+				<button type="button" class="btn btn-primary" onclick="GetMean()" style="float: left;">Mean</button>
+				<button type="button" class="btn btn-primary" onclick="GetSum()" style="float: left;">Sum</button>
+				<button type="button" class="btn btn-primary" onclick="GetProduct()" style="float: left;">Product</button>
+				<button type="button" class="btn btn-danger" data-dismiss="modal" style="float: right;">Close</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 <!-- Portfolio Modal 2 -->
 <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title">Easy Factorial</h4>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="row col-sm-12">
-                            <!-- factorial description row on modal -->
-                            Write a program that calculates the factorial of a number.
-                            The factorial of a non-negative integer n is the product
-                            of all positive integers less than or equal to n.
-                            (i.e.  5! = 5 x 4 x 3 x 2 x 1 = 120). <p />
-                        </div>
-                        <div class="row col-sm-12">
-                            Insert factorial number: <p />
-                        </div>
-                        <div class="row col-sm-12">
-                            <input type="number" id="n1" class="col-sm-6 well well-sm" value="5">
-                        </div>
-                        <div class="row col-sm-12">
-                            <p id="fact-result"></p> <!--prints out fact-results-->
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="row col-sm-12">
-                            <pre class="brush: js" id="modalscroll">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title">Easy Factorial</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="row col-sm-12">
+							<!-- factorial description row on modal -->
+							Write a program that calculates the factorial of a number.
+							The factorial of a non-negative integer n is the product
+							of all positive integers less than or equal to n.
+							(i.e.  5! = 5 x 4 x 3 x 2 x 1 = 120). <p />
+						</div>
+						<div class="row col-sm-12">
+							Insert factorial number: <p />
+						</div>
+						<div class="row col-sm-12">
+							<input type="number" id="n1" class="col-sm-6 well well-sm" value="5">
+						</div>
+						<div class="row col-sm-12">
+							<p id="fact-result"></p> <!--prints out fact-results-->
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="row col-sm-12">
+							<pre class="brush: js" id="modalscroll">
                             function GetFactorial() { //myModal2
                                 var num = parseInt($("#n1").val());
                                 var ans = 1;
@@ -322,57 +245,57 @@
                                 ans + "</b> is the factorial number.");
                             }
                         </pre>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" onclick="GetFactorial()" style="float: left;">Get Factorial</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal" style="float: right;">Close</button>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" onclick="GetFactorial()" style="float: left;">Get Factorial</button>
+				<button type="button" class="btn btn-danger" data-dismiss="modal" style="float: right;">Close</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 <!-- Portfolio Modal 3 -->
 <!-- Modal -->
 <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title">1 - 100 FizzBuzz</h4>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="row col-sm-12">
-                            <!--FizzBuzz description row on modal-->
-                            Write a program that accepts two numbers between 1 and 100 from the user.
-                            The program then iterates through all numbers from 1 to 100,
-                            printing numbers in ascending order to the screen.
-                            For each number that is a multiple of the first number input by the user,
-                            print "Fizz" instead of the number.
-                            For each number that is a multiple of the second number input by the user,
-                            print "Buzz" instead of the number.
-                            For numbers that are multiples of both numbers,
-                            print "FizzBuzz" instead of the number.<p />
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <input type="number" id="fizz" value="5">
-                            </div>
-                            <div class="col-sm-6">
-                                <input type="number" id="buzz" value="10">
-                            </div>
-                        </div>
-                        <div class="row col-sm-12">
-                            <!--fizzbuzz-results row on modal-->
-                            <p id="fizzbuzz-result"></p> <!--print out fizzbuzz-results-->
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="row col-sm-12">
-                            <pre class="brush: js" id="modalscroll">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title">1 - 100 FizzBuzz</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="row col-sm-12">
+							<!--FizzBuzz description row on modal-->
+							Write a program that accepts two numbers between 1 and 100 from the user.
+							The program then iterates through all numbers from 1 to 100,
+							printing numbers in ascending order to the screen.
+							For each number that is a multiple of the first number input by the user,
+							print "Fizz" instead of the number.
+							For each number that is a multiple of the second number input by the user,
+							print "Buzz" instead of the number.
+							For numbers that are multiples of both numbers,
+							print "FizzBuzz" instead of the number.<p />
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<input type="number" id="fizz" value="5">
+							</div>
+							<div class="col-sm-6">
+								<input type="number" id="buzz" value="10">
+							</div>
+						</div>
+						<div class="row col-sm-12">
+							<!--fizzbuzz-results row on modal-->
+							<p id="fizzbuzz-result"></p> <!--print out fizzbuzz-results-->
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="row col-sm-12">
+							<pre class="brush: js" id="modalscroll">
                             function fizzBuzz() { //myModal3
                                 var result = "";
                                 for (var i = 1; i <= 100; i++) {
@@ -396,48 +319,48 @@
                                 $("#fizzbuzz-result").html("<br /><b>Fizzbuzz:</b>" + result);
                             }
                             </pre>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" onclick="fizzBuzz()" style="float: left;">Get FizzBuzz</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" onclick="fizzBuzz()" style="float: left;">Get FizzBuzz</button>
+				<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 <!-- Portfolio Modal 4 -->
 <!-- Modal -->
 <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title">Simple Palindrome</h4>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="row col-sm-12">
-                            Write a program that determines whether a word is a Palindrome
-                            (the same backward as it is forward – “radar” for example).
-                            Applies only for single words. (use same caps)
-                            Display the result to the user.<p />
-                        </div>
-                        <div class="row col-sm-12">
-                            Palindrome check:<p />
-                        </div>
-                        <div class="row col-sm-12">
-                            <input type="text" id="word" value="Radar"><p />
-                        </div>
-                        <div class="row col-sm-12">
-                            <p id="pal-result"></p>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="row col-sm-12">
-                            <pre class="brush: js" id="modalscroll">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title">Simple Palindrome</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="row col-sm-12">
+							Write a program that determines whether a word is a Palindrome
+							(the same backward as it is forward – “radar” for example).
+							Applies only for single words. (use same caps)
+							Display the result to the user.<p />
+						</div>
+						<div class="row col-sm-12">
+							Palindrome check:<p />
+						</div>
+						<div class="row col-sm-12">
+							<input type="text" id="word" value="Radar"><p />
+						</div>
+						<div class="row col-sm-12">
+							<p id="pal-result"></p>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="row col-sm-12">
+							<pre class="brush: js" id="modalscroll">
                             function palindrome() {
                                 outputWord = "";
                                 inputWord = $("#word").val();
@@ -455,15 +378,15 @@
                                 }
                             }
                             </pre>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" onclick="palindrome()" style="float: left;">Palindrome Check</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" onclick="palindrome()" style="float: left;">Palindrome Check</button>
+				<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 <br /><br />

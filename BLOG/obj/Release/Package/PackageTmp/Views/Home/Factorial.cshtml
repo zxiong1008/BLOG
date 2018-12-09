@@ -5,19 +5,36 @@
 
 @* Set up a form in this page to submit data to the server
     strictly in the open/close braces. (ie. Input boxes)  *@
-    @using (Html.BeginForm())
-    {
-        <div class="row">
-            <input name="FactNumber" type="number" />
-        </div>
-        <div class="row">
-            <input type="submit" value="Submit Numbers" />
-        </div>
-    }
+<style>
+	body {
+		background-color: transparent;
+	}
+</style>
+<div class="row row-black">
+	<div class="intro-text">
+		<div class="intro-heading">
+			C#: Factorial
+		</div>
+	</div>
+</div>
+<div class="row row-white">
+	<p>
+		Obtain the factorial of a number <mark>(ie. n!)</mark>
+	</p>
+	@using (Html.BeginForm())
+	{
+		<div class="col-md-12" style="padding-left: 0;">
+			<input name="FactNumber" type="number" />
+			<input type="submit" value="Submit Numbers" />
+		</div>
+	}
 
-    @if (Model != null)
-    {
-        <div class="row">
-            <p>Factorial Result:  @Model.FactResult</p>
-        </div>
-    }
+	@if (Model != null)
+	{
+		<div class="col-md-12" style="padding-left: 0;">
+			<p>Factorial Result:  <mark>@Html.Raw(Model.FactResult)</mark></p>
+		</div>
+	}
+
+
+</div>

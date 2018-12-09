@@ -13,15 +13,15 @@
             {
                 if (i % fizz == 0 && i % buzz == 0)
                 {
-                    result += " FizzBuzz ";
+                    result += " <mark>FizzBuzz</mark> ";
                 }
                 else if (i % fizz == 0)
                 {
-                    result += " Fizz ";
+                    result += " <mark>Fizz</mark>";
                 }
                 else if (i % buzz == 0)
                 {
-                    result += " Buzz ";
+                    result += " <mark>Buzz</mark> ";
                 }
                 else
                 {

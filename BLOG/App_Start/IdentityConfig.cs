@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Net;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -22,22 +21,18 @@ namespace BLOG
     {
         public async Task SendAsync(IdentityMessage message)
         {
-            //Plug in your email service here to send an email
-            var apiKey = ConfigurationManager.AppSettings["SendGridAPIKey"];
-			//var from = ConfigurationManager.AppSettings["ContactEmail"];
-
-			//send message to destination of corresponding user to veryify email
-			var from = message.Destination;
-
-			//using the constructor to get an instance of the message object
+			//Plug in your email service here to send an email
+			var apiKey = ConfigurationManager.AppSettings["SendGridAPIKey"];
+            var from = ConfigurationManager.AppSettings["ContactEmail"];
+            //using the constructor to get an instance of the message object
             SendGridMessage myMessage = new SendGridMessage();
             myMessage.AddTo(from);
             myMessage.From = new MailAddress(from);
             myMessage.Subject = message.Subject;
             myMessage.Html = message.Body;
-
-			//create a web transport for sending email
-			var transportWeb = new Web(apiKey);
+            
+            //create a web transport for sending email
+            var transportWeb = new Web(apiKey);
             //send the email
             try
             {
