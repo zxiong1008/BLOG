@@ -34,8 +34,7 @@ namespace BLOG.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base(Helper.Helpers.GetRDSConnectionString(), throwIfV1Schema: false)
-            //: base("DefaultConnection", throwIfV1Schema: false)
+            : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
 
